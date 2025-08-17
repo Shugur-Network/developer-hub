@@ -823,22 +823,22 @@ subManager.subscribeToHashtags(['nostr', 'decentralized'], (event) => {
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Simple Bot</h4>
                 <p class="text-xs text-gray-600">Basic bot that responds to mentions</p>
-                <a href="/examples/simple-bot" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Web Dashboard</h4>
                 <p class="text-xs text-gray-600">Real-time dashboard for monitoring events</p>
-                <a href="/examples/web-dashboard" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Event Archiver</h4>
                 <p class="text-xs text-gray-600">Save events to database for analysis</p>
-                <a href="/examples/event-archiver" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Multi-Relay Client</h4>
                 <p class="text-xs text-gray-600">Connect to multiple relays simultaneously</p>
-                <a href="/examples/multi-relay" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
             </div>
           </div>
@@ -1527,22 +1527,22 @@ export type ProfileResult = Result<UserProfile, 'not_found' | 'invalid_metadata'
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Type-Safe Nostr Client</h4>
                 <p class="text-xs text-gray-600">Full-featured client with state management</p>
-                <a href="/examples/ts-client" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Event Processing Service</h4>
                 <p class="text-xs text-gray-600">Microservice for processing Nostr events</p>
-                <a href="/examples/ts-processor" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Real-time Dashboard</h4>
                 <p class="text-xs text-gray-600">TypeScript + React dashboard</p>
-                <a href="/examples/ts-dashboard" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">CLI Tool</h4>
                 <p class="text-xs text-gray-600">Command-line interface for Nostr operations</p>
-                <a href="/examples/ts-cli" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
               </div>
             </div>
           </div>
@@ -3722,6 +3722,674 @@ enum NostrError: Error {
   ]
 };
 
+// Architecture Guide
+export const architectureGuide: GuideContent = {
+  title: "System Architecture",
+  description: "Design scalable, reliable Nostr systems: clients, backends, and relays working together across multiple regions and relays.",
+  heroIcon: "Layers",
+  tags: ["Distributed Systems", "Multi-Relay", "Scalability", "Reliability"],
+  sections: {
+    overview: {
+      title: "Overview",
+      description: "Key building blocks and responsibilities across client, API, workers, storage, and relays.",
+      icon: "Info",
+      bgColor: "bg-white",
+      iconColor: "text-blue-600",
+      content: `
+        <div class="space-y-4">
+          <p class="text-gray-600">A robust Nostr architecture separates concerns clearly: UI client, API gateway, background processors, observability, and storage. Relays are treated as an eventually-consistent message fabric.</p>
+          <ul class="list-disc ml-6 text-gray-600">
+            <li>Clients publish/subscribe via multiple relays for resilience.</li>
+            <li>APIs handle auth, rate-limits, input validation, and aggregate data from relays + storage.</li>
+            <li>Workers handle enrichment: indexing, moderation, recommendations, archiving.</li>
+            <li>Observability collects metrics, traces, logs for performance and reliability.</li>
+          </ul>
+        </div>
+      `
+    },
+    resilience: {
+      title: "Resilience Patterns",
+      description: "Design for failure and recovery",
+      icon: "Shield",
+      bgColor: "bg-gray-50",
+      iconColor: "text-blue-600",
+      content: `
+        <div class="space-y-3 text-gray-600">
+          <ul class="list-disc ml-6 space-y-1">
+            <li><strong>Retry with backoff + jitter:</strong> Avoid thundering herds; cap max retries.</li>
+            <li><strong>Timeouts everywhere:</strong> Socket, publish, subscription bootstrap.</li>
+            <li><strong>Circuit breakers:</strong> Short-circuit unhealthy relays/services.</li>
+            <li><strong>Idempotency:</strong> De-duplicate by event id; use deterministic ids for commands.</li>
+            <li><strong>Bulkheads:</strong> Isolate pools for critical vs. best-effort work.</li>
+          </ul>
+        </div>
+      `
+    },
+    reference: {
+      title: "Reference Architecture",
+      description: "A pragmatic blueprint for most apps",
+      icon: "Server",
+      bgColor: "bg-gray-50",
+      iconColor: "text-blue-600",
+      content: `
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="border rounded p-4">
+            <h4 class="font-semibold mb-2">Core Services</h4>
+            <ul class="list-disc ml-6 text-sm text-gray-600 space-y-1">
+              <li>API Gateway (REST/GraphQL) with caching</li>
+              <li>Websocket fan-out for live updates</li>
+              <li>Background queues for indexing and ML</li>
+              <li>Object/DB storage for durable state</li>
+            </ul>
+          </div>
+          <div class="border rounded p-4">
+            <h4 class="font-semibold mb-2">Relay Strategy</h4>
+            <ul class="list-disc ml-6 text-sm text-gray-600 space-y-1">
+              <li>Multi-relay read with health-aware selection</li>
+              <li>Primary + fallback publish</li>
+              <li>Eventual consistency with de-duplication</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold mb-2">High-level Diagram</h4>
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-x-auto">Client ──WS──▶ Relays (multi)
+   │                   │
+   │         (subscribe/publish)
+   ▼                   ▼
+ API Gateway ──▶ Workers/Queues ──▶ Storage (DB/Object)
+      ▲                    │
+      └────── Metrics/Logs/Traces ◀─ Observability</pre>
+        </div>
+      `
+    },
+    data: {
+      title: "Data Modeling",
+      description: "Model events, indexes, and derived views",
+      icon: "Database",
+      bgColor: "bg-white",
+      iconColor: "text-blue-600",
+      content: `
+        <div class="space-y-3 text-gray-600">
+          <p>Persist raw events for audit, then project into queryable shapes: timelines, user profiles, relationships.</p>
+          <p>Use idempotent processors keyed by event id to safely re-run pipelines.</p>
+        </div>
+      `
+    },
+    security: {
+      title: "Security & Compliance",
+      description: "Protect keys, validate data, and reduce abuse",
+      icon: "Lock",
+      bgColor: "bg-gray-50",
+      iconColor: "text-blue-600",
+      steps: [
+        { title: "Key Handling", description: "Never transmit private keys; use secure storage; sign locally." },
+        { title: "Validation", description: "Verify signatures, kinds, tags, and size limits on ingest." },
+        { title: "Abuse Controls", description: "Rate limits, CAPTCHAs where needed, allowlists/denylists for relays." },
+        { title: "Content Filters", description: "Moderation rules, NSFW flags, and reporting flows." }
+      ]
+    },
+    deployment: {
+      title: "Deployment & Operations",
+      description: "Regions, CI/CD, rollouts, and backup",
+      icon: "Package",
+      bgColor: "bg-gray-50",
+      iconColor: "text-blue-600",
+      steps: [
+        { title: "Multi-Region Reads", description: "Prefer nearest relays and cache layer; failover on errors." },
+        { title: "Blue/Green", description: "Roll out API and workers gradually with health checks." },
+        { title: "Backups", description: "Archive raw events to object storage; test restore procedures." }
+      ]
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Clone-and-run blueprints to learn the architecture",
+      icon: "GitBranch",
+      bgColor: "bg-white",
+      iconColor: "text-blue-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-blue-700">
+          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
+          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Nostr Relay Monitor</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Performance", description: "Optimize throughput and latency", icon: "Zap", href: "/guides/performance" },
+    { title: "Testing", description: "Validate correctness and resilience", icon: "CheckCircle", href: "/guides/testing" },
+    { title: "Relay Setup", description: "Run and harden your relay", icon: "Server", href: "/guides/relay-setup" }
+  ]
+};
+
+// Performance Guide
+export const performanceGuide: GuideContent = {
+  title: "Performance Optimization",
+  description: "Techniques to reduce latency and increase throughput for Nostr applications across clients, APIs, and workers.",
+  heroIcon: "Zap",
+  tags: ["Latency", "Throughput", "Caching", "Profiling"],
+  sections: {
+    connection: {
+      title: "Connections & Subscriptions",
+      description: "Batch requests, debounce filters, and reuse sockets",
+      icon: "Link",
+      bgColor: "bg-white",
+      iconColor: "text-orange-600",
+      content: `
+        <ul class="list-disc ml-6 text-gray-600 space-y-1">
+          <li>Prefer long-lived WebSocket connections.</li>
+          <li>Coalesce filters and de-duplicate subscriptions.</li>
+          <li>Exponential backoff and jitter for reconnects.</li>
+        </ul>
+      `,
+      codeExample: {
+        language: "JavaScript",
+        title: "Debounced subscribe with backoff",
+        description: "Reuse a single socket, debounce filter updates, and reconnect with backoff.",
+        code: `import { relayInit } from 'nostr-tools'
+
+const relay = relayInit('wss://shu01.shugur.net')
+let reconnectAttempts = 0
+
+async function connect() {
+  try {
+    await relay.connect()
+    reconnectAttempts = 0
+  } catch (e) {
+    const delay = Math.min(30000, 1000 * 2 ** reconnectAttempts + Math.random() * 500)
+    reconnectAttempts++
+    setTimeout(connect, delay)
+  }
+}
+
+connect()
+
+// Debounce filter changes
+let debounceTimer
+function subscribeWithDebounce(filters) {
+  clearTimeout(debounceTimer)
+  debounceTimer = setTimeout(() => {
+    const sub = relay.sub([filters])
+    sub.on('event', (ev) => console.log('event', ev.id))
+  }, 200)
+}`
+      }
+    },
+    websocket: {
+      title: "WebSocket Tips",
+      description: "Keep connections healthy and efficient",
+      icon: "Radio",
+      bgColor: "bg-white",
+      iconColor: "text-orange-600",
+      content: `
+        <ul class="list-disc ml-6 text-gray-600 space-y-1">
+          <li>Use ping/pong heartbeats; detect half-open sockets quickly.</li>
+          <li>Compress payloads where supported; avoid excessive JSON nesting.</li>
+          <li>Shard subscriptions by timeline vs. DMs to avoid overfetching.</li>
+        </ul>
+      `,
+      codeExample: {
+        language: "TypeScript",
+        title: "Reconnect with jitter",
+        description: "Simple backoff with jitter for WebSocket reconnects.",
+        code: `let attempt = 0
+function backoffDelay() { return Math.min(30000, 1000 * 2 ** attempt + Math.random() * 500) }
+
+function onClose() {
+  attempt++
+  setTimeout(() => {
+    // reconnect()
+  }, backoffDelay())
+}`
+      }
+    },
+    caching: {
+      title: "Caching & Indexes",
+      description: "Exploit temporal locality and derived views",
+      icon: "Layers",
+      bgColor: "bg-gray-50",
+      iconColor: "text-orange-600",
+      content: `
+        <p class="text-gray-600">Use in-memory caches for hot timelines, and precomputed indexes for common queries. Invalidate by event id and author.</p>
+      `,
+      codeExample: {
+        language: "TypeScript",
+        title: "Tiny LRU for events",
+        description: "Cache recent events by id with simple LRU behavior.",
+        code: `class LruCache<K, V> {
+  private map = new Map<K, V>()
+  constructor(private max: number) {}
+  get(k: K) { const v = this.map.get(k); if (v) { this.map.delete(k); this.map.set(k, v) } return v }
+  set(k: K, v: V) { if (this.map.has(k)) this.map.delete(k); this.map.set(k, v); if (this.map.size > this.max) this.map.delete(this.map.keys().next().value) }
+}
+
+const cache = new LruCache<string, any>(1000)
+function onEvent(ev: any) { cache.set(ev.id, ev) }`
+      }
+    },
+    server: {
+      title: "Server Optimizations",
+      description: "Throughput on APIs and workers",
+      icon: "Server",
+      bgColor: "bg-white",
+      iconColor: "text-orange-600",
+      content: `
+        <ul class="list-disc ml-6 text-gray-600 space-y-1">
+          <li>Connection pooling and reuse; avoid per-request TLS handshakes.</li>
+          <li>Zero-copy parsing where possible; stream large responses.</li>
+          <li>Batch writes and use idempotent upserts keyed by event id.</li>
+        </ul>
+      `,
+      codeExample: {
+        language: "TypeScript",
+        title: "Batch upserts",
+        description: "Group writes and upsert by event id to keep idempotency.",
+        code: `async function persistBatch(db, events) {
+  const chunks = []
+  for (let i = 0; i < events.length; i += 100) chunks.push(events.slice(i, i + 100))
+  for (const c of chunks) {
+    await db.upsert('events', c, 'id') // assume composite upsert by primary key 'id'
+  }
+}`
+      }
+    },
+    profiling: {
+      title: "Profiling & Observability",
+      description: "Find bottlenecks, not guesses",
+      icon: "Activity",
+      bgColor: "bg-white",
+      iconColor: "text-orange-600",
+      steps: [
+        { title: "Metrics", description: "Track p50/p95/p99 latencies per operation." },
+        { title: "Tracing", description: "Trace publish/subscribe across services." },
+        { title: "Load Tests", description: "Continuously run representative scenarios." }
+      ]
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Profiles, caches, and batching in practice",
+      icon: "GitBranch",
+      bgColor: "bg-gray-50",
+      iconColor: "text-orange-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-orange-700">
+          <li><a href="https://github.com/Shugur-Network/nostr-publisher-cli" target="_blank" rel="noopener" class="underline">Nostr Publisher CLI</a></li>
+          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Relay Monitor</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Architecture", description: "Design for scale from the start", icon: "Layers", href: "/guides/architecture" },
+    { title: "Rust", description: "High-performance implementations", icon: "Server", href: "/guides/rust" },
+    { title: "Go", description: "Efficient backends and workers", icon: "Zap", href: "/guides/go" }
+  ]
+};
+
+// Testing Guide
+export const testingGuide: GuideContent = {
+  title: "Testing",
+  description: "End-to-end strategy for unit, integration, property-based, and load testing of Nostr apps.",
+  heroIcon: "CheckCircle",
+  tags: ["Unit", "Integration", "E2E", "Load"],
+  sections: {
+    unit: {
+      title: "Unit Testing",
+      description: "Pure logic and serialization",
+      icon: "FileText",
+      bgColor: "bg-white",
+      iconColor: "text-green-600",
+      content: `<p class="text-gray-600">Mock cryptography and focus on event builders, filters, and reducers.</p>`,
+      codeExample: {
+        language: "TypeScript",
+        title: "Jest unit test",
+        description: "Test a text note event builder.",
+        code: `import { createTextNote } from './events'
+test('createTextNote builds kind 1', () => {
+  const ev = createTextNote('hi', 'npub...', 'nsec...')
+  expect(ev.kind).toBe(1)
+  expect(typeof ev.id).toBe('string')
+})`
+      }
+    },
+    property: {
+      title: "Property-Based Testing",
+      description: "Generate cases instead of hand-picking",
+      icon: "Activity",
+      bgColor: "bg-white",
+      iconColor: "text-green-600",
+      content: `<p class="text-gray-600">Use tools like fast-check (JS/TS) or Hypothesis (Python) to fuzz event shapes, kinds, and edge timestamps.</p>`
+    },
+    integration: {
+      title: "Integration Testing",
+      description: "Talk to a mock or local relay",
+      icon: "Monitor",
+      bgColor: "bg-gray-50",
+      iconColor: "text-green-600",
+      content: `<p class="text-gray-600">Spin a local relay or stub server to validate subscriptions, publish, and error paths.</p>`,
+      codeExample: {
+        language: "Python",
+        title: "pytest: subscribe flow",
+        description: "Integration test with a local relay stub.",
+        code: `def test_subscribe_flow(relay_stub):
+    client = relay_stub.client()
+    sub = client.subscribe({ 'kinds': [1], 'limit': 1 })
+    event = sub.next(timeout=2)
+    assert event['kind'] == 1`
+      }
+    },
+    fixtures: {
+      title: "Fixtures & Test Data",
+      description: "Stable inputs for deterministic tests",
+      icon: "Package",
+      bgColor: "bg-white",
+      iconColor: "text-green-600",
+      content: `<p class="text-gray-600">Keep curated event corpora by kind and size; tag edge cases (max tags, invalid sigs, big content).</p>`
+    },
+    load: {
+      title: "Load & Chaos",
+      description: "Throughput, latency, and failure drills",
+      icon: "Activity",
+      bgColor: "bg-white",
+      iconColor: "text-green-600",
+      steps: [
+        { title: "Scenarios", description: "Fan-out timelines, backfills, and burst publishes." },
+        { title: "Limits", description: "Rate limits, queue sizes, timeouts, max payloads." },
+        { title: "Chaos", description: "Random disconnects and partial relay failures." }
+      ],
+      codeExample: {
+        language: "JavaScript",
+        title: "k6 smoke test",
+        description: "Minimal load test for publish endpoint (conceptual).",
+        code: `import http from 'k6/http'
+import { sleep } from 'k6'
+export default function() {
+  http.post('https://api.example/publish', JSON.stringify({ kind: 1, content: 'hi' }))
+  sleep(1)
+}`
+      }
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Start with a bot or client and add tests",
+      icon: "GitBranch",
+      bgColor: "bg-white",
+      iconColor: "text-green-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-emerald-700">
+          <li><a href="https://github.com/Shugur-Network/nostr-bot-framework" target="_blank" rel="noopener" class="underline">Nostr Bot Framework</a></li>
+          <li><a href="https://github.com/Shugur-Network/nostr-simple-client" target="_blank" rel="noopener" class="underline">Simple Nostr Client</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Performance", description: "Measure before you optimize", icon: "Zap", href: "/guides/performance" },
+    { title: "Best Practices", description: "Security and operability", icon: "Shield", href: "/guides/best-practices" },
+    { title: "Examples", description: "Try tested templates", icon: "Code", href: "/examples" }
+  ]
+};
+
+// Analytics Guide
+export const analyticsGuide: GuideContent = {
+  title: "Analytics",
+  description: "Privacy-first telemetry and product analytics for Nostr apps without compromising user sovereignty.",
+  heroIcon: "Activity",
+  tags: ["Telemetry", "Metrics", "Dashboards", "Privacy"],
+  sections: {
+    principles: {
+      title: "Principles",
+      description: "Collect less, aggregate more",
+      icon: "Shield",
+      bgColor: "bg-white",
+      iconColor: "text-purple-600",
+      content: `<p class="text-gray-600">Avoid PII, prefer on-device aggregation, sample where possible, and provide opt-in controls.</p>`
+    },
+    schema: {
+      title: "Event Schema",
+      description: "Consistent events for analytics",
+      icon: "FileText",
+      bgColor: "bg-white",
+      iconColor: "text-purple-600",
+      content: `<p class=\"text-gray-600\">Define a minimal event schema (name, version, ts, props) and evolve via versioning to avoid breaking dashboards.</p>`,
+      codeExample: {
+        language: "TypeScript",
+        title: "Event schema + tracker",
+        description: "Track analytics events consistently.",
+        code: `type Event = { name: string, ts: number, ver: number, props?: Record<string, unknown> }
+function track(ev: Event) {
+  console.log(JSON.stringify(ev)) // send to collector
+}
+track({ name: 'app_open', ts: Date.now(), ver: 1 })`
+      }
+    },
+    product: {
+      title: "Product Analytics",
+      description: "Events, funnels, and retention",
+      icon: "Clipboard",
+      bgColor: "bg-gray-50",
+      iconColor: "text-purple-600",
+      content: `<p class="text-gray-600">Model user actions as events with minimal fields; compute funnels and cohort metrics server-side.</p>`,
+      codeExample: {
+        language: "JavaScript",
+        title: "Client tracker",
+        description: "Small wrapper to send product events.",
+        code: `export function track(name, props = {}) {
+  navigator.sendBeacon('/collect', JSON.stringify({ name, ts: Date.now(), ver: 1, props }))
+}`
+      }
+    },
+    dashboards: {
+      title: "Dashboards",
+      description: "Make metrics actionable",
+      icon: "Monitor",
+      bgColor: "bg-white",
+      iconColor: "text-purple-600",
+      content: `<ul class=\"list-disc ml-6 text-gray-600 space-y-1\"><li>DAU/WAU/MAU and retention cohorts</li><li>Publish success rate per relay</li><li>Subscription lag and E2E latency</li></ul>`
+    },
+    observability: {
+      title: "Operational Metrics",
+      description: "SLIs and SLOs",
+      icon: "Server",
+      bgColor: "bg-white",
+      iconColor: "text-purple-600",
+      content: `<p class="text-gray-600">Track relay health, connection success, subscription lag, and publish acceptance rates.</p>
+        <div class="mt-4">
+          <h4 class="font-semibold mb-2">Data Flow</h4>
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-x-auto">Client events ─▶ Collector ─▶ Queue ─▶ Aggregator ─▶ Warehouse
+       │                                                             │
+       └────────── Dashboards ◀─────────── Metrics/Exports ◀─────────┘</pre>
+        </div>`
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Dashboards and collectors",
+      icon: "GitBranch",
+      bgColor: "bg-white",
+      iconColor: "text-purple-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-purple-700">
+          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Relay Monitor</a></li>
+          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Architecture", description: "Where analytics fits", icon: "Layers", href: "/guides/architecture" },
+    { title: "Examples", description: "See dashboards and probes", icon: "Code", href: "/examples" },
+    { title: "Performance", description: "Correlate metrics to speed", icon: "Zap", href: "/guides/performance" }
+  ]
+};
+
+// Machine Learning Guide
+export const machineLearningGuide: GuideContent = {
+  title: "Machine Learning",
+  description: "ML use-cases for Nostr: ranking, moderation, embeddings, and summarization in privacy-preserving ways.",
+  heroIcon: "Cpu",
+  tags: ["Ranking", "Moderation", "Embeddings", "Python"],
+  sections: {
+    usecases: {
+      title: "Use Cases",
+      description: "What ML adds to Nostr apps",
+      icon: "Sparkles",
+      bgColor: "bg-white",
+      iconColor: "text-pink-600",
+      content: `<ul class="list-disc ml-6 text-gray-600 space-y-1"><li>Timeline ranking</li><li>Abuse and spam moderation</li><li>Search via embeddings</li></ul>`
+    },
+    curation: {
+      title: "Dataset Curation",
+      description: "Quality in, quality out",
+      icon: "Clipboard",
+      bgColor: "bg-white",
+      iconColor: "text-pink-600",
+      steps: [
+        { title: "Sampling", description: "Avoid bias; stratify by kinds, authors, time." },
+        { title: "Labeling", description: "Lightweight human-in-the-loop for moderation/quality." },
+        { title: "Versioning", description: "Track dataset and feature versions for reproducibility." }
+      ]
+    },
+    pipeline: {
+      title: "Offline Pipeline",
+      description: "ETL, features, training, and evaluation",
+      icon: "Package",
+      bgColor: "bg-gray-50",
+      iconColor: "text-pink-600",
+      content: `<p class="text-gray-600">Export curated events, build features, and train models offline; deploy small on-device models where possible.</p>`,
+      codeExample: {
+        language: "Python",
+        title: "Embeddings pipeline (conceptual)",
+        description: "Compute sentence embeddings for search.",
+        code: `from sentence_transformers import SentenceTransformer
+model = SentenceTransformer('all-MiniLM-L6-v2')
+emb = model.encode(['hello nostr'])
+print(len(emb[0]))`
+      }
+    },
+    integration: {
+      title: "Integration",
+      description: "Real-time inference and fallbacks",
+      icon: "Link",
+      bgColor: "bg-white",
+      iconColor: "text-pink-600",
+      content: `<p class="text-gray-600">Serve models behind a feature-flag; cache results and provide predictable fallbacks for cold-start.</p>`,
+      codeExample: {
+        language: "TypeScript",
+        title: "Feature-gated inference",
+        description: "Toggle inference via flags and fallbacks.",
+        code: `async function rank(timeline, flags) {
+  if (!flags.mlRanking) return timeline
+  try { return await fetch('/rank', { method: 'POST', body: JSON.stringify(timeline) }).then(r => r.json()) }
+  catch { return timeline }
+}`
+      }
+    },
+    evaluation: {
+      title: "Evaluation",
+      description: "Measure model value, not just accuracy",
+      icon: "Activity",
+      bgColor: "bg-gray-50",
+      iconColor: "text-pink-600",
+      content: `<p class="text-gray-600">Define task metrics (CTR, abuse catch-rate), offline AUC/precision-recall, and run online A/B tests gated by safety checks.</p>`
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Pipelines and ranking integrations",
+      icon: "GitBranch",
+      bgColor: "bg-white",
+      iconColor: "text-pink-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-rose-700">
+          <li><a href="https://github.com/Shugur-Network/nostr-simple-client" target="_blank" rel="noopener" class="underline">Simple Nostr Client</a></li>
+          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App (ranking hooks)</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Python", description: "Build ML pipelines", icon: "Terminal", href: "/guides/python" },
+    { title: "Analytics", description: "Measure model impact", icon: "Activity", href: "/guides/analytics" },
+    { title: "Architecture", description: "Where ML fits in", icon: "Layers", href: "/guides/architecture" }
+  ]
+};
+
+// App Store Guide
+export const appStoreGuide: GuideContent = {
+  title: "App Store Guidelines",
+  description: "Prepare Nostr mobile apps for distribution: privacy, security, UX, and store compliance.",
+  heroIcon: "CheckCircle",
+  tags: ["iOS", "Android", "Privacy", "Security"],
+  sections: {
+    privacy: {
+      title: "Privacy",
+      description: "Keys and data handling",
+      icon: "Lock",
+      bgColor: "bg-white",
+      iconColor: "text-emerald-600",
+      content: `<p class="text-gray-600">Store keys in secure enclaves/keystores, avoid analytics that can deanonymize users, and provide clear consent flows.</p>`
+    },
+    security: {
+      title: "Security",
+      description: "Hardening mobile clients",
+      icon: "Shield",
+      bgColor: "bg-gray-50",
+      iconColor: "text-emerald-600",
+      content: `<ul class=\"list-disc ml-6 text-gray-600 space-y-1\"><li>Jailbreak/root detection</li><li>Tamper detection and code obfuscation</li><li>Secure clipboard handling for keys</li></ul>`
+    },
+    ux: {
+      title: "User Experience",
+      description: "Sign-in, recovery, and education",
+      icon: "Heart",
+      bgColor: "bg-gray-50",
+      iconColor: "text-emerald-600",
+      content: `<p class="text-gray-600">Explain public/private keys, export flows, and relay configuration with friendly language and warnings.</p>`
+    },
+    compliance: {
+      title: "Compliance",
+      description: "Store policies and reviews",
+      icon: "FileText",
+      bgColor: "bg-white",
+      iconColor: "text-emerald-600",
+      steps: [
+        { title: "Permissions", description: "Request the minimum set with justifications." },
+        { title: "Content", description: "Moderation and reporting mechanisms." },
+        { title: "Payments", description: "If applicable, conform to platform rules." }
+      ]
+    },
+    release: {
+      title: "Release Process",
+      description: "From builds to reviews",
+      icon: "Package",
+      bgColor: "bg-white",
+      iconColor: "text-emerald-600",
+      steps: [
+        { title: "Store Assets", description: "Screenshots, descriptions, privacy policy URLs." },
+        { title: "Crash Reporting", description: "Integrate privacy-friendly crash and ANR reporting." },
+        { title: "Phased Rollout", description: "Release to rings; monitor metrics; rollback plan." }
+      ]
+    },
+    examples: {
+      title: "Runnable Examples",
+      description: "Mobile clients and store-ready setups",
+      icon: "GitBranch",
+      bgColor: "bg-white",
+      iconColor: "text-emerald-600",
+      content: `
+        <ul class="list-disc ml-6 text-sm text-teal-700">
+          <li><a href="https://github.com/Shugur-Network/mobile-nostr-client" target="_blank" rel="noopener" class="underline">Mobile Nostr Client</a></li>
+          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
+        </ul>
+      `
+    }
+  },
+  nextSteps: [
+    { title: "Swift", description: "Build iOS apps", icon: "Smartphone", href: "/guides/swift" },
+    { title: "Kotlin", description: "Build Android apps", icon: "Smartphone", href: "/guides/kotlin" },
+    { title: "Flutter", description: "Cross-platform app", icon: "Monitor", href: "/guides/flutter" }
+  ]
+};
+
 // Export all guides
 export const guides = {
   'getting-started': gettingStartedGuide,
@@ -3733,7 +4401,13 @@ export const guides = {
   'kotlin': kotlinGuide,
   'flutter': flutterGuide,
   'rust': rustGuide,
-  'swift': swiftGuide
+  'swift': swiftGuide,
+  'architecture': architectureGuide,
+  'performance': performanceGuide,
+  'testing': testingGuide,
+  'analytics': analyticsGuide,
+  'machine-learning': machineLearningGuide,
+  'app-store': appStoreGuide
 };
 
 export type GuideKey = keyof typeof guides;

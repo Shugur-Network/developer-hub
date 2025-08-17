@@ -277,6 +277,48 @@
         <p class="text-sm opacity-80 mb-4">Security, performance, and user experience tips</p>
         <div class="text-xs text-green-500">Intermediate • 15 min read</div>
       </a>
+
+      <a href="/guides/architecture" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <Layers class="h-8 w-8 text-blue-500 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">System Architecture</h3>
+        <p class="text-sm opacity-80 mb-4">Design scalable Nostr systems</p>
+        <div class="text-xs text-blue-500">Intermediate • 20 min read</div>
+      </a>
+
+      <a href="/guides/performance" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <Zap class="h-8 w-8 text-orange-500 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Performance</h3>
+        <p class="text-sm opacity-80 mb-4">Optimize latency and throughput</p>
+        <div class="text-xs text-orange-500">Intermediate • 15 min read</div>
+      </a>
+
+      <a href="/guides/testing" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <CheckCircle class="h-8 w-8 text-emerald-600 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Testing</h3>
+        <p class="text-sm opacity-80 mb-4">Unit, integration, E2E, and load</p>
+        <div class="text-xs text-emerald-600">Intermediate • 15 min read</div>
+      </a>
+
+      <a href="/guides/analytics" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <Activity class="h-8 w-8 text-purple-600 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Analytics</h3>
+        <p class="text-sm opacity-80 mb-4">Privacy-first product and ops metrics</p>
+        <div class="text-xs text-purple-600">Intermediate • 15 min read</div>
+      </a>
+
+      <a href="/guides/machine-learning" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <Cpu class="h-8 w-8 text-rose-600 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Machine Learning</h3>
+        <p class="text-sm opacity-80 mb-4">Ranking, moderation, embeddings</p>
+        <div class="text-xs text-rose-600">Advanced • 20 min read</div>
+      </a>
+
+      <a href="/guides/app-store" class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group">
+        <CheckCircle class="h-8 w-8 text-teal-600 mb-4" />
+        <h3 class="font-semibold mb-2 group-hover:text-primary">App Store Guidelines</h3>
+        <p class="text-sm opacity-80 mb-4">Ship iOS/Android apps with confidence</p>
+        <div class="text-xs text-teal-600">Intermediate • 15 min read</div>
+      </a>
     </div>
   </div>
 </section>
