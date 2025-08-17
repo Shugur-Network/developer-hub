@@ -41,6 +41,57 @@
   </div>
 </section>
 
+<!-- Universal Example -->
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-4xl px-4">
+    <h2 class="text-2xl font-display mb-6">Universal Example</h2>
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Install</span>
+        <button on:click={() => copyToClipboard(`dependencies {\n  implementation(\"com.github.nostr-sdk:nostr-sdk:0.1.0\")\n  implementation(\"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0\")\n}`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`dependencies {
+  implementation("com.github.nostr-sdk:nostr-sdk:0.1.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0")
+}`}</code></pre>
+    </div>
+
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Create keypair</span>
+        <button on:click={() => copyToClipboard(`val sk = KeyPair.generatePrivateKey()\nval pk = KeyPair.getPublicKey(sk)\nprintln(\"npub: \$pk\")`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`val sk = KeyPair.generatePrivateKey()
+val pk = KeyPair.getPublicKey(sk)
+println("npub: $pk")`}</code></pre>
+    </div>
+
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Connect, Subscribe, Send, Receive</span>
+        <button on:click={() => copyToClipboard(`val relay = Relay(\"wss://shu01.shugur.net\")\nrelay.connect()\n\nval sub = relay.sub(listOf(Filter(kinds = listOf(1), limit = 1)))\nsub.onEvent { ev -> println(\"recv \${ev.id}\") }\n\nval ev = Event(kind=1, content=\"Hello from Kotlin\", pubkey=pk)\nrelay.publish(ev) { ok -> println(\"published\") }`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`val relay = Relay("wss://shu01.shugur.net")
+relay.connect()
+
+val sub = relay.sub(listOf(Filter(kinds = listOf(1), limit = 1)))
+sub.onEvent { ev -> println("recv ${ev.id}") }
+
+val ev = Event(kind=1, content="Hello from Kotlin", pubkey=pk)
+relay.publish(ev) { ok -> println("published") }`}</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- Table of Contents -->
 <section class="py-8 bg-white border-b">
   <div class="mx-auto max-w-4xl px-4">

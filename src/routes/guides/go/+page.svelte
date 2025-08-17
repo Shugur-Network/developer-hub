@@ -31,23 +31,48 @@
   </div>
 </section>
 
+<!-- Universal Example -->
 <section class="py-16 bg-white">
-  <div class="mx-auto max-w-6xl px-4 text-center">
-    <div class="flex items-center gap-3 justify-center mb-6">
-      <Settings class="h-6 w-6 text-gray-500" />
-      <h2 class="text-2xl font-display">Coming Soon</h2>
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-2xl font-display mb-6">Universal Example</h2>
+    <div class="border rounded-xl p-6 mb-6">
+      <h3 class="font-semibold mb-2">Install</h3>
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-x-auto"><code>go get github.com/nbd-wtf/go-nostr</code></pre>
     </div>
-    <p class="text-gray-600 mb-8">
-      This comprehensive Go guide for Nostr development is currently being written. 
-      It will cover go-nostr, goroutines, and building concurrent Nostr services.
-    </p>
-    <div class="flex justify-center gap-4">
-      <a href="/guides" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
-        Back to Guides
-      </a>
-      <a href="/guides/python" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-        Python Guide
-      </a>
+    <div class="border rounded-xl p-6 mb-6">
+      <h3 class="font-semibold mb-2">Create keypair</h3>
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-x-auto"><code>{`package main
+import (
+  "fmt"
+  "github.com/nbd-wtf/go-nostr/nip19"
+)
+
+func main(){
+  sk := nostr.GeneratePrivateKey()
+  pk, _ := nostr.GetPublicKey(sk)
+  fmt.Println("npub:", pk)
+}`}</code></pre>
+    </div>
+    <div class="border rounded-xl p-6 mb-6">
+      <h3 class="font-semibold mb-2">Connect, Subscribe, Send, Receive</h3>
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-x-auto"><code>{`package main
+import (
+  "fmt"
+  "time"
+  "github.com/nbd-wtf/go-nostr"
+)
+
+func main(){
+  relay, _ := nostr.RelayConnect(context.Background(), "wss://shu01.shugur.net")
+  sub, _ := relay.Subscribe(context.Background(), nostr.Filter{Kinds: []int{1}, Limit: 1})
+  go func(){ for ev := range sub.Events { fmt.Println("recv", ev.ID, ev.Content) } }()
+
+  sk := "YOUR_HEX_PRIVATE_KEY"
+  pk, _ := nostr.GetPublicKey(sk)
+  ev := nostr.Event{Kind: 1, CreatedAt: time.Now(), Tags: nostr.Tags{}, Content: "Hello from Go", PubKey: pk}
+  ev.Sign(sk)
+  relay.Publish(context.Background(), ev)
+}`}</code></pre>
     </div>
   </div>
 </section>

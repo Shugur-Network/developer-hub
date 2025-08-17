@@ -41,6 +41,78 @@
   </div>
 </section>
 
+<!-- Universal Example -->
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-4xl px-4">
+    <h2 class="text-2xl font-display mb-6">Universal Example</h2>
+
+    <!-- 1. Install requirements -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Install</span>
+        <button on:click={() => copyToClipboard(`pip install nostr-tools websockets`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>pip install nostr-tools websockets</code></pre>
+    </div>
+
+    <!-- 2. Create keypair -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Create keypair</span>
+        <button on:click={() => copyToClipboard(`from nostr.keys import generate_private_key, get_public_key\n\nsk = generate_private_key()\npk = get_public_key(sk)\nprint('npub:', pk)`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`from nostr.keys import generate_private_key, get_public_key
+
+sk = generate_private_key()
+pk = get_public_key(sk)
+print('npub:', pk)`}</code></pre>
+    </div>
+
+    <!-- 3-5. Connect, subscribe, send, receive -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Connect, Subscribe, Send, Receive</span>
+        <button on:click={() => copyToClipboard(`import asyncio, time\nfrom nostr.relay import Relay\nfrom nostr.event import Event\nfrom nostr.keys import get_public_key, sign_event\n\nasync def main():\n    relay = Relay('wss://shu01.shugur.net')\n    await relay.connect()\n\n    # Subscribe\n    sub = relay.sub([{ 'kinds': [1], 'limit': 1 }])\n    async for ev in sub:\n        print('recv', ev.id, ev.content)\n        break\n\n    # Publish\n    sk = 'YOUR_HEX_PRIVATE_KEY'\n    pk = get_public_key(sk)\n    ev = { 'kind': 1, 'created_at': int(time.time()), 'tags': [], 'content': 'Hello from Python', 'pubkey': pk }\n    ev['id'] = Event.hash(ev)\n    ev['sig'] = sign_event(ev, sk)\n    pub = relay.publish(ev)\n    await pub.wait()\n    print('published')\n\nasyncio.run(main())`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`import asyncio, time
+from nostr.relay import Relay
+from nostr.event import Event
+from nostr.keys import get_public_key, sign_event
+
+async def main():
+    relay = Relay('wss://shu01.shugur.net')
+    await relay.connect()
+
+    # Subscribe
+    sub = relay.sub([{ 'kinds': [1], 'limit': 1 }])
+    async for ev in sub:
+        print('recv', ev.id, ev.content)
+        break
+
+    # Publish
+    sk = 'YOUR_HEX_PRIVATE_KEY'
+    pk = get_public_key(sk)
+    ev = { 'kind': 1, 'created_at': int(time.time()), 'tags': [], 'content': 'Hello from Python', 'pubkey': pk }
+    ev['id'] = Event.hash(ev)
+    ev['sig'] = sign_event(ev, sk)
+    pub = relay.publish(ev)
+    await pub.wait()
+    print('published')
+
+asyncio.run(main())`}</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- Table of Contents -->
 <section class="py-8 bg-white border-b">
   <div class="mx-auto max-w-4xl px-4">

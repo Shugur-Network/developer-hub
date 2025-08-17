@@ -58,4 +58,44 @@
   </section>
 {/each}
 
+<!-- Universal Example -->
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-4xl px-4">
+    <h2 class="text-2xl font-display mb-6">Universal Example</h2>
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Install</span>
+        <button on:click={() => copyToClipboard(`flutter pub add web_socket_channel`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <svelte:component this={getIcon('copy')} class="h-3 w-3" />
+          Copy
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>flutter pub add web_socket_channel</code></pre>
+    </div>
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Create keypair</span>
+        <button on:click={() => copyToClipboard(`final sk = generatePrivateKey();\nfinal pk = getPublicKey(sk);\nprint('npub: \$pk');`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <svelte:component this={getIcon('copy')} class="h-3 w-3" />
+          Copy
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`final sk = generatePrivateKey();
+final pk = getPublicKey(sk);
+print('npub: $pk');`}</code></pre>
+    </div>
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Connect, Subscribe, Send, Receive</span>
+        <button on:click={() => copyToClipboard(`final channel = WebSocketChannel.connect(Uri.parse('wss://shu01.shugur.net'));\nchannel.stream.listen((message) => print('recv: \$message'));\n// publish by sending Nostr EVENT JSON via channel.sink.add(jsonEncode(...));`)} class="flex items-center gap-2 text-xs text-gray-400 hover:text-white">
+          <svelte:component this={getIcon('copy')} class="h-3 w-3" />
+          Copy
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`final channel = WebSocketChannel.connect(Uri.parse('wss://shu01.shugur.net'));
+channel.stream.listen((message) => print('recv: $message'));
+// publish by sending Nostr EVENT JSON via channel.sink.add(jsonEncode(...));`}</code></pre>
+    </div>
+  </div>
+</section>
 <GuideNextSteps steps={flutterGuide.nextSteps} />

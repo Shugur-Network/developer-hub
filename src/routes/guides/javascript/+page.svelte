@@ -41,6 +41,102 @@
   </div>
 </section>
 
+<!-- Universal Example -->
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-4xl px-4">
+    <h2 class="text-2xl font-display mb-6">Universal Example</h2>
+
+    <!-- 1. Install requirements -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Install</span>
+        <button 
+          on:click={() => copyToClipboard(`npm install nostr-tools`)}
+          class="flex items-center gap-2 text-xs text-gray-400 hover:text-white"
+        >
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>npm install nostr-tools</code></pre>
+    </div>
+
+    <!-- 2. Create keypair -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Create keypair</span>
+        <button 
+          on:click={() => copyToClipboard(`import { generatePrivateKey, getPublicKey } from 'nostr-tools'
+
+const sk = generatePrivateKey() // hex
+const pk = getPublicKey(sk)
+console.log('npub:', pk)`)}
+          class="flex items-center gap-2 text-xs text-gray-400 hover:text-white"
+        >
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`import { generatePrivateKey, getPublicKey } from 'nostr-tools'
+
+const sk = generatePrivateKey() // hex
+const pk = getPublicKey(sk)
+console.log('npub:', pk)`}</code></pre>
+    </div>
+
+    <!-- 3-5. Connect, subscribe, send, receive -->
+    <div class="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-sm text-gray-400">Connect, Subscribe, Send, Receive</span>
+        <button 
+          on:click={() => copyToClipboard(`import { relayInit, finishEvent, getEventHash, getPublicKey, signEvent } from 'nostr-tools'
+
+const relay = relayInit('wss://shu01.shugur.net')
+await relay.connect()
+
+// Subscribe to recent text notes
+const sub = relay.sub([{ kinds: [1], limit: 1 }])
+sub.on('event', (ev) => console.log('recv', ev.id, ev.content))
+sub.on('eose', () => console.log('EOSE'))
+
+// Publish a text note
+const sk = 'YOUR_HEX_PRIVATE_KEY'
+const pk = getPublicKey(sk)
+const ev = { kind: 1, created_at: Math.floor(Date.now()/1000), tags: [], content: 'Hello from JS', pubkey: pk }
+ev.id = getEventHash(ev)
+ev.sig = signEvent(ev, sk)
+
+const pub = relay.publish(ev)
+pub.on('ok', () => console.log('published'))`)}
+          class="flex items-center gap-2 text-xs text-gray-400 hover:text-white"
+        >
+          <Copy class="h-3 w-3" />
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre class="text-sm overflow-x-auto"><code>{`import { relayInit, finishEvent, getEventHash, getPublicKey, signEvent } from 'nostr-tools'
+
+const relay = relayInit('wss://shu01.shugur.net')
+await relay.connect()
+
+// Subscribe to recent text notes
+const sub = relay.sub([{ kinds: [1], limit: 1 }])
+sub.on('event', (ev) => console.log('recv', ev.id, ev.content))
+sub.on('eose', () => console.log('EOSE'))
+
+// Publish a text note
+const sk = 'YOUR_HEX_PRIVATE_KEY'
+const pk = getPublicKey(sk)
+const ev = { kind: 1, created_at: Math.floor(Date.now()/1000), tags: [], content: 'Hello from JS', pubkey: pk }
+ev.id = getEventHash(ev)
+ev.sig = signEvent(ev, sk)
+
+const pub = relay.publish(ev)
+pub.on('ok', () => console.log('published'))`}</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- Table of Contents -->
 <section class="py-8 bg-white border-b">
   <div class="mx-auto max-w-4xl px-4">
