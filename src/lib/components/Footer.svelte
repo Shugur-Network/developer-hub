@@ -2,9 +2,8 @@
   <div class="max-w-7xl mx-auto px-6 py-8">
     <div class="grid md:grid-cols-3 gap-8">
       <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="/shugur-logo.svg" alt="Shugur Logo" class="h-6 w-6" />
-          <div class="font-display text-lg text-white">Shugur</div>
+        <div class="mb-4">
+          <img src="/shugur-logo-full-light.svg" alt="Shugur" class="h-6" />
         </div>
         <p class="text-gray-400 text-sm">
           Developer resources for the Shugur ecosystem.

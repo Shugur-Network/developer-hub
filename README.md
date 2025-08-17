@@ -1,72 +1,137 @@
-# Shugur Developer Hub
+# Shugur Developer Hub - Nostr Protocol Development Guide
 
-Developer portal for [developers.shugur.net](https://developers.shugur.net)
+A comprehensive developer hub for building applications on the Nostr protocol with Shugur relay. This site provides guides, examples, and documentation organized by programming language to help developers get started with decentralized social networking.
 
-## Overview
+## 🌟 Features
 
-Central hub for all Shugur developer resources, infrastructure status, and project access. This site serves as the main entry point for developers working with Shugur's open infrastructure.
+- **Multi-Language Support**: Guides for JavaScript, TypeScript, Python, Rust, Go, and Swift
+- **Comprehensive NIP Coverage**: Documentation for all NIPs supported by Shugur relay
+- **Interactive Examples**: Ready-to-use code snippets and complete project templates
+- **Production-Ready Relay**: Connect to `wss://shugur.com` for reliable Nostr infrastructure
+- **Modern Design**: Clean, responsive interface built with SvelteKit and TailwindCSS
 
-## Tech Stack
+## 🚀 Quick Start
 
-- **Framework:** SvelteKit
-- **Styling:** Tailwind CSS  
-- **Icons:** Lucide Svelte
-- **Deployment:** Vercel/Netlify → developers.shugur.net
+1. **Clone and install dependencies:**
 
-## Features
+   ```bash
+   git clone <repository-url>
+   cd developer-hub
+   npm install
+   ```
 
-### 🔗 **Quick Access**
-- Direct links to documentation sites
-- Real-time status monitoring links
-- GitHub repositories and source code
+2. **Start development server:**
 
-### 📊 **Project Overview**
-- Active projects with status indicators
-- Feature lists and endpoint information
-- Multi-format connection options
+   ```bash
+   npm run dev
+   ```
 
-### 📈 **System Status**
-- Service availability overview
-- Uptime metrics display
-- Links to detailed status pages
+3. **Open in browser:**
+   Navigate to `http://localhost:5173`
 
-### 🎨 **Design System**
-- Consistent Shugur branding
-- Dark header with light content areas
-- Developer-focused UI/UX
+## 📚 Content Structure
 
-## Development
+### Main Sections
+
+- **Home** (`/`) - Overview and quick access to all resources
+- **Guides** (`/guides`) - Development tutorials organized by language
+- **NIPs** (`/nips`) - Supported Nostr Improvement Proposals
+- **Examples** (`/examples`) - Complete project examples and code snippets
+
+### Language-Specific Guides
+
+- **JavaScript** (`/guides/javascript`) - Browser and Node.js development
+- **TypeScript** (`/guides/typescript`) - Type-safe Nostr applications
+- **Python** (`/guides/python`) - Bots, analytics, and backend services
+- **Rust** (`/guides/rust`) - High-performance applications (Coming Soon)
+- **Go** (`/guides/go`) - Scalable services (Coming Soon)
+- **Swift** (`/guides/swift`) - iOS/macOS apps (Coming Soon)
+
+### Essential Guides
+
+- **Getting Started** (`/guides/getting-started`) - 5-minute setup guide
+- **Core Concepts** (`/guides/concepts`) - Understanding Nostr fundamentals
+- **Relay Connection** (`/guides/relay-connection`) - Connect to Shugur relay
+
+## 🔧 Technical Details
+
+### Built With
+
+- **Framework**: SvelteKit 2.0
+- **Styling**: TailwindCSS 3.4
+- **Icons**: Lucide Svelte
+- **Language**: TypeScript
+- **Build Tool**: Vite
+
+## 🌐 Shugur Relay Information
+
+- **WebSocket URL**: `wss://shugur.com`
+- **Status**: Production Ready
+- **Uptime**: 99.9% SLA
+- **Supported NIPs**: 01, 02, 04, 09, 11, 15, 20, 25, 28, 33, 40, 42, 50
+- **Rate Limiting**: 50 events/minute for free users
+- **Features**: Real-time monitoring, comprehensive logging, developer-friendly policies
+
+## 🛠️ Development
+
+### Adding New Content
+
+1. **New Language Guide**: Create a new route in `src/routes/guides/[language]/+page.svelte`
+2. **New Example**: Add to the examples array in `src/routes/examples/+page.svelte`
+3. **New NIP**: Update the supportedNips array in `src/routes/nips/+page.svelte`
+
+### Code Examples Format
+
+All code examples should:
+
+- Include copy-to-clipboard functionality
+- Provide clear explanations
+- Show expected output
+- Include error handling
+- Link to full tutorials
+
+## 📱 Responsive Design
+
+The site is fully responsive and optimized for:
+
+- Desktop (1024px+)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
+
+## 🚀 Deployment
+
+### Build for Production
 
 ```bash
-npm install
-npm run dev
+npm run build
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to view locally.
+### Preview Production Build
 
-## Domain Strategy
+```bash
+npm run preview
+```
 
-**developers.shugur.net** → Developer hub landing
-- Infrastructure access point
-- Documentation portal
-- Status monitoring dashboard
-- GitHub integration
+## 🤝 Contributing
 
-## Content Sections
+1. Fork the repository
+2. Create a feature branch
+3. Add your content following the existing patterns
+4. Test locally with `npm run dev`
+5. Submit a pull request
 
-1. **Hero** - Welcome and navigation
-2. **Quick Access** - Documentation, Status, GitHub
-3. **Active Projects** - Current infrastructure
-4. **System Status** - Service health overview  
-5. **Contact** - Support and help options
+## 🔗 Links
 
-## Deployment
+- **Company Website**: [https://shugur.com](https://shugur.com)
+- **Status Page**: [https://shugur.net](https://shugur.net)
+- **GitHub Organization**: [https://github.com/Shugur-Network](https://github.com/Shugur-Network)
 
-Deploys automatically to developers.shugur.net when pushed to main branch.
+## 📞 Support
 
-## Related Sites
+- **Email**: [developers@shugur.com](mailto:developers@shugur.com)
+- **GitHub Issues**: For bug reports and feature requests
+- **Community**: Join the Nostr developer community
 
-- **Company:** [shugur.com](https://shugur.com)
-- **Relay Docs:** [docs.shugur.com](https://docs.shugur.com)
-- **Status:** [shugur.net](https://shugur.net)
-- **Relay Service:** [shugur.com](https://shugur.com)
+---
+
+Built with ❤️ for the Nostr ecosystem by Shugur Network

@@ -1,5 +1,5 @@
 <script>
-  import { ExternalLink, BookOpen, Activity, Zap } from 'lucide-svelte';
+  import { ExternalLink, BookOpen, Activity, Zap, Layers } from 'lucide-svelte';
   
   export let title;
   export let description;
@@ -14,6 +14,7 @@
       case 'book': return BookOpen;
       case 'activity': return Activity;
       case 'zap': return Zap;
+      case 'layers': return Layers;
       default: return ExternalLink;
     }
   }
