@@ -2,7 +2,7 @@
 
 A comprehensive developer hub for building applications on the Nostr protocol with Shugur relay. This site provides guides, examples, and documentation organized by programming language to help developers get started with decentralized social networking.
 
-## 🌟 Features
+## ✨ Features
 
 - **Multi-Language Support**: Guides for JavaScript, TypeScript, Python, Rust, Go, and Swift
 - **Comprehensive NIP Coverage**: Documentation for all NIPs supported by Shugur relay
@@ -10,7 +10,7 @@ A comprehensive developer hub for building applications on the Nostr protocol wi
 - **Production-Ready Relay**: Connect to `wss://shugur.com` for reliable Nostr infrastructure
 - **Modern Design**: Clean, responsive interface built with SvelteKit and TailwindCSS
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone and install dependencies:**
 
@@ -29,7 +29,7 @@ A comprehensive developer hub for building applications on the Nostr protocol wi
 3. **Open in browser:**
    Navigate to `http://localhost:5173`
 
-## 📚 Content Structure
+## Content Structure
 
 ### Main Sections
 
@@ -53,7 +53,7 @@ A comprehensive developer hub for building applications on the Nostr protocol wi
 - **Core Concepts** (`/guides/concepts`) - Understanding Nostr fundamentals
 - **Relay Connection** (`/guides/relay-connection`) - Connect to Shugur relay
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Built With
 
@@ -63,7 +63,7 @@ A comprehensive developer hub for building applications on the Nostr protocol wi
 - **Language**: TypeScript
 - **Build Tool**: Vite
 
-## 🌐 Shugur Relay Information
+## Shugur Relay Information
 
 - **WebSocket URL**: `wss://shugur.com`
 - **Status**: Production Ready
@@ -72,7 +72,7 @@ A comprehensive developer hub for building applications on the Nostr protocol wi
 - **Rate Limiting**: 50 events/minute for free users
 - **Features**: Real-time monitoring, comprehensive logging, developer-friendly policies
 
-## 🛠️ Development
+## Development
 
 ### Adding New Content
 
@@ -90,7 +90,7 @@ All code examples should:
 - Include error handling
 - Link to full tutorials
 
-## 📱 Responsive Design
+## Responsive Design
 
 The site is fully responsive and optimized for:
 
@@ -98,7 +98,7 @@ The site is fully responsive and optimized for:
 - Tablet (768px - 1023px)
 - Mobile (320px - 767px)
 
-## 🚀 Deployment
+## Deployment
 
 ### Build for Production
 
@@ -112,7 +112,7 @@ npm run build
 npm run preview
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -120,13 +120,13 @@ npm run preview
 4. Test locally with `npm run dev`
 5. Submit a pull request
 
-## 🔗 Links
+## Links
 
 - **Company Website**: [https://shugur.com](https://shugur.com)
 - **Status Page**: [https://shugur.net](https://shugur.net)
 - **GitHub Organization**: [https://github.com/Shugur-Network](https://github.com/Shugur-Network)
 
-## 📞 Support
+## Support
 
 - **Email**: [developers@shugur.com](mailto:developers@shugur.com)
 - **GitHub Issues**: For bug reports and feature requests

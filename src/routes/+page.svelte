@@ -18,7 +18,7 @@
       </div>
     </div>
     <h1 class="text-4xl md:text-5xl font-display tracking-tight mb-6">
-      Nostr Development Hub
+      Shugur Development Hub
     </h1>
     <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
       Your complete guide to building decentralized applications on the Nostr protocol. 
