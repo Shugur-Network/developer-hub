@@ -31,7 +31,7 @@
         Explore Projects
       </a>
       <a 
-        href="https://status.shugur.net" 
+        href="https://shugur.net" 
         class="px-6 py-3 border border-white/20 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
       >
         View Status
@@ -46,7 +46,7 @@
     <h2 class="text-2xl font-display text-center mb-12">Quick Access</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <a 
-        href="https://docs.relay.shugur.net" 
+        href="https://docs.shugur.com" 
         class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group"
       >
         <BookOpen class="h-8 w-8 text-primary mb-4" />
@@ -56,7 +56,7 @@
       </a>
       
       <a 
-        href="https://status.shugur.net" 
+        href="https://shugur.net" 
         class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group"
       >
         <Activity class="h-8 w-8 text-green-500 mb-4" />
@@ -92,12 +92,12 @@
         statusColor="green"
         links={[
           { href: "https://relay.shugur.com", label: "Project Page", icon: "external" },
-          { href: "https://docs.relay.shugur.net", label: "Documentation", icon: "book" },
-          { href: "https://status.relay.shugur.net", label: "Status", icon: "activity" },
-          { href: "wss://relay.shugur.net", label: "Connect", icon: "zap" }
+          { href: "https://docs.shugur.com", label: "Documentation", icon: "book" },
+          { href: "https://status.shugur.com", label: "Status", icon: "activity" },
+          { href: "wss://shugur.com", label: "Connect", icon: "zap" }
         ]}
         features={[
-          "WebSocket endpoint: wss://relay.shugur.net",
+          "WebSocket endpoint: wss://shugur.com",
           "NIP-01, NIP-11, NIP-15, NIP-20 support",
           "Rate limiting and fair use policies",
           "Self-hosting guides available"
@@ -124,19 +124,19 @@
         service="Nostr Relay"
         status="Operational"
         uptime="99.9%"
-        endpoint="relay.shugur.net"
+        endpoint="shugur.com"
       />
       <StatusCard
         service="Documentation"
         status="Operational"
         uptime="99.9%"
-        endpoint="docs.relay.shugur.net"
+        endpoint="docs.shugur.com"
       />
       <StatusCard
         service="Status Page"
         status="Operational"
         uptime="99.8%"
-        endpoint="status.shugur.net"
+        endpoint="shugur.net"
       />
       <StatusCard
         service="Company Site"
@@ -148,7 +148,7 @@
     
     <div class="text-center mt-8">
       <a 
-        href="https://status.shugur.net" 
+        href="https://shugur.net" 
         class="inline-flex items-center gap-2 text-primary hover:underline"
       >
         View detailed status page

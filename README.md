@@ -67,6 +67,6 @@ Deploys automatically to developers.shugur.net when pushed to main branch.
 ## Related Sites
 
 - **Company:** [shugur.com](https://shugur.com)
-- **Relay Docs:** [docs.relay.shugur.net](https://docs.relay.shugur.net)
-- **Status:** [status.shugur.net](https://status.shugur.net)
-- **Relay Service:** [relay.shugur.net](https://relay.shugur.net)
+- **Relay Docs:** [docs.shugur.com](https://docs.shugur.com)
+- **Status:** [shugur.net](https://shugur.net)
+- **Relay Service:** [shugur.com](https://shugur.com)

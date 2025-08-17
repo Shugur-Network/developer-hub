@@ -14,8 +14,8 @@
       <div>
         <h3 class="font-semibold mb-3 text-white">Resources</h3>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="https://docs.relay.shugur.net" class="hover:text-primary">Documentation</a></li>
-          <li><a href="https://status.shugur.net" class="hover:text-primary">Status Page</a></li>
+          <li><a href="https://docs.shugur.com" class="hover:text-primary">Documentation</a></li>
+          <li><a href="https://shugur.net" class="hover:text-primary">Status Page</a></li>
           <li><a href="https://github.com/Shugur-Network" class="hover:text-primary">GitHub</a></li>
         </ul>
       </div>
@@ -24,7 +24,7 @@
         <h3 class="font-semibold mb-3 text-white">Infrastructure</h3>
         <ul class="space-y-2 text-sm text-gray-400">
           <li><a href="https://shugur.net" class="hover:text-primary">Network Status</a></li>
-          <li><a href="https://relay.shugur.net" class="hover:text-primary">Primary Relay</a></li>
+          <li><a href="https://shugur.com" class="hover:text-primary">Primary Relay</a></li>
           <li><a href="https://shugur.com" class="hover:text-primary">Company</a></li>
         </ul>
       </div>

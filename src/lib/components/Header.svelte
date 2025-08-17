@@ -8,8 +8,8 @@
       </div>
     </div>
     <nav class="flex gap-6 text-sm text-gray-300">
-      <a href="https://docs.relay.shugur.net" class="hover:text-primary">Docs</a>
-      <a href="https://status.shugur.net" class="hover:text-primary">Status</a>
+      <a href="https://docs.shugur.com" class="hover:text-primary">Docs</a>
+      <a href="https://shugur.net" class="hover:text-primary">Status</a>
       <a href="https://shugur.com" class="hover:text-primary">Company</a>
     </nav>
   </div>
