@@ -107,24 +107,42 @@
         <h3 class="text-xl font-semibold">Quick Deployment</h3>
       </div>
       
-      <div class="bg-gray-900 rounded-lg p-6 mb-6">
-        <pre class="text-gray-100 text-sm overflow-x-auto"><code># Clone and deploy your first cluster node
-git clone https://github.com/Shugur-Network/relay.git
-cd relay
-docker-compose up -d
-
-# Your HA relay cluster is now running on ws://localhost:8080
-# Scale to multiple nodes with: docker-compose -f cluster.yml up -d</code></pre>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h4 class="font-semibold mb-3">Standalone Deployment</h4>
+          <p class="text-sm text-gray-600 mb-3">Perfect for development, testing, or small-scale production</p>
+          <div class="bg-gray-900 rounded-lg p-4">
+            <pre class="text-gray-100 text-xs overflow-x-auto"><code>curl -fsSL https://github.com/Shugur-Network/relay/raw/main/scripts/install.standalone.sh | sudo bash</code></pre>
+          </div>
+          <ul class="text-xs text-gray-600 mt-2 space-y-1">
+            <li>• Single-node deployment</li>
+            <li>• Automatic SSL certificates</li>
+            <li>• Web interface included</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-3">Distributed Deployment</h4>
+          <p class="text-sm text-gray-600 mb-3">Production-ready, high-availability multi-node setup</p>
+          <div class="bg-gray-900 rounded-lg p-4">
+            <pre class="text-gray-100 text-xs overflow-x-auto"><code>curl -fsSL https://github.com/Shugur-Network/relay/raw/main/scripts/install.distributed.sh | sudo bash</code></pre>
+          </div>
+          <ul class="text-xs text-gray-600 mt-2 space-y-1">
+            <li>• Multi-node HA cluster</li>
+            <li>• Load balancing & failover</li>
+            <li>• CockroachDB storage</li>
+          </ul>
+        </div>
       </div>
       
       <div class="grid md:grid-cols-2 gap-6">
         <div class="p-4 bg-blue-50 rounded-lg">
           <h4 class="font-semibold text-blue-900 mb-2">What Happens Next</h4>
           <ul class="text-sm text-blue-800 space-y-1">
-            <li>• Load balancer automatically routes client connections</li>
-            <li>• Data replication begins across cluster nodes</li>
-            <li>• Health monitoring and failover protection activate</li>
-            <li>• Clients connect to a single endpoint with full redundancy</li>
+            <li>• Automated setup with SSL certificates</li>
+            <li>• CockroachDB distributed storage configured</li>
+            <li>• Load balancing and failover protection active</li>
+            <li>• Single endpoint ready for client connections</li>
           </ul>
         </div>
         
