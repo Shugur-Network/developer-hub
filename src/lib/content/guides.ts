@@ -3786,16 +3786,7 @@ export const architectureGuide: GuideContent = {
           </div>
         </div>
 
-        <div class="mt-6">
-          <h4 class="font-semibold mb-2">High-level Diagram</h4>
-          <pre class="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-x-auto">Client ──WS──▶ Relays (multi)
-   │                   │
-   │         (subscribe/publish)
-   ▼                   ▼
- API Gateway ──▶ Workers/Queues ──▶ Storage (DB/Object)
-      ▲                    │
-      └────── Metrics/Logs/Traces ◀─ Observability</pre>
-        </div>
+
       `
     },
     data: {

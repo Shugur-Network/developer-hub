@@ -149,10 +149,10 @@
         <div class="p-4 bg-green-50 rounded-lg">
           <h4 class="font-semibold text-green-900 mb-2">Production Ready</h4>
           <ul class="text-sm text-green-800 space-y-1">
-            <li>• 20+ NIPs supported out of the box</li>
-            <li>• Automatic service discovery and peer coordination</li>
-            <li>• Built-in monitoring and metrics endpoints</li>
-            <li>• Zero-downtime rolling updates and maintenance</li>
+            <li>• 20+ NIPs supported for maximum compatibility</li>
+            <li>• Enterprise-grade security and rate limiting</li>
+            <li>• Comprehensive monitoring and observability</li>
+            <li>• Go-based implementation for high performance</li>
           </ul>
         </div>
       </div>
@@ -243,23 +243,23 @@
     
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-gray-50 p-8 rounded-xl">
-        <h3 class="text-xl font-semibold mb-4">Deployment Guide</h3>
+        <h3 class="text-xl font-semibold mb-4">Quick Start Guide</h3>
         <p class="text-gray-600 mb-6">
-          Step-by-step instructions for deploying Shugur relay clusters from single-node development setups to production multi-node deployments with load balancing, monitoring, and security configurations.
+          The fastest way to deploy Shugur Relay with automated installation scripts. Choose between standalone or distributed deployment options with comprehensive setup instructions.
         </p>
-        <a href="https://docs.shugur.com/deployment" class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium">
-          View Deployment Guide
+        <a href="https://docs.shugur.com/quick-start/" class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium">
+          View Quick Start Guide
           <ExternalLink class="h-4 w-4" />
         </a>
       </div>
       
       <div class="bg-gray-50 p-8 rounded-xl">
-        <h3 class="text-xl font-semibold mb-4">Operations Manual</h3>
+        <h3 class="text-xl font-semibold mb-4">Installation & Configuration</h3>
         <p class="text-gray-600 mb-6">
-          Comprehensive operations guide covering cluster monitoring, performance tuning, backup strategies, disaster recovery, rolling updates, and troubleshooting common deployment scenarios.
+          Complete installation guide with Docker, bare metal, and distributed options. Includes configuration management, performance tuning, and troubleshooting resources.
         </p>
-        <a href="https://docs.shugur.com/operations" class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium">
-          View Operations Manual
+        <a href="https://www.shugur.com/#installation" class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium">
+          View Installation Guide
           <ExternalLink class="h-4 w-4" />
         </a>
       </div>
