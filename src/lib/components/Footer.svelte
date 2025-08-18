@@ -13,18 +13,18 @@
       <div>
         <h3 class="font-semibold mb-3 text-white">Resources</h3>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="https://docs.shugur.com" class="hover:text-primary">Documentation</a></li>
-          <li><a href="https://shugur.net" class="hover:text-primary">Status Page</a></li>
+          <li><a href="/guides" class="hover:text-primary">Quick Start</a></li>
+          <li><a href="/guides/concepts" class="hover:text-primary">Learn Nostr</a></li>
+          <li><a href="/nips" class="hover:text-primary">Protocol Specs</a></li>
           <li><a href="https://github.com/Shugur-Network" class="hover:text-primary">GitHub</a></li>
         </ul>
       </div>
       
       <div>
-        <h3 class="font-semibold mb-3 text-white">Infrastructure</h3>
+        <h3 class="font-semibold mb-3 text-white">Network</h3>
         <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="https://shugur.net" class="hover:text-primary">Network Status</a></li>
-          <li><a href="https://shugur.com" class="hover:text-primary">Primary Relay</a></li>
-          <li><a href="https://shugur.com" class="hover:text-primary">Company</a></li>
+          <li><a href="https://shugur.net" class="hover:text-primary">Status</a></li>
+          <li><a href="https://shugur.com" class="hover:text-primary">Relay</a></li>
         </ul>
       </div>
     </div>

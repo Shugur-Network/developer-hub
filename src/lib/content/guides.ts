@@ -323,9 +323,9 @@ quickStart().catch(console.error)`
             <h3 class="font-semibold mb-3 text-purple-600">Build Your First App</h3>
             <p class="text-sm text-gray-600 mb-4">Choose your preferred programming language and build a complete Nostr application.</p>
             <div class="space-y-2">
-              <a href="/guides/javascript" class="block text-sm text-blue-600 hover:underline">→ JavaScript/Node.js</a>
-              <a href="/guides/python" class="block text-sm text-blue-600 hover:underline">→ Python (Bots & Backends)</a>
-              <a href="/guides/flutter" class="block text-sm text-blue-600 hover:underline">→ Flutter (Mobile Apps)</a>
+              <a href="/guides" class="block text-sm text-blue-600 hover:underline">→ JavaScript/Node.js Quick Start</a>
+              <a href="/guides" class="block text-sm text-blue-600 hover:underline">→ Python Quick Start</a>
+              <a href="/guides" class="block text-sm text-blue-600 hover:underline">→ Flutter Quick Start</a>
             </div>
           </div>
           
@@ -823,22 +823,22 @@ subManager.subscribeToHashtags(['nostr', 'decentralized'], (event) => {
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Simple Bot</h4>
                 <p class="text-xs text-gray-600">Basic bot that responds to mentions</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Web Dashboard</h4>
                 <p class="text-xs text-gray-600">Real-time dashboard for monitoring events</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Event Archiver</h4>
                 <p class="text-xs text-gray-600">Save events to database for analysis</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Multi-Relay Client</h4>
                 <p class="text-xs text-gray-600">Connect to multiple relays simultaneously</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
             </div>
           </div>
@@ -877,10 +877,10 @@ subManager.subscribeToHashtags(['nostr', 'decentralized'], (event) => {
       href: "/guides/python"
     },
     {
-      title: "Examples",
+      title: "Advanced Guides",
       description: "Explore complete project examples",
       icon: "Code",
-      href: "/examples"
+      href: "/guides"
     }
   ]
 };
@@ -1527,22 +1527,22 @@ export type ProfileResult = Result<UserProfile, 'not_found' | 'invalid_metadata'
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Type-Safe Nostr Client</h4>
                 <p class="text-xs text-gray-600">Full-featured client with state management</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Event Processing Service</h4>
                 <p class="text-xs text-gray-600">Microservice for processing Nostr events</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">Real-time Dashboard</h4>
                 <p class="text-xs text-gray-600">TypeScript + React dashboard</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
               <div class="bg-gray-50 p-4 rounded">
                 <h4 class="font-semibold text-sm">CLI Tool</h4>
                 <p class="text-xs text-gray-600">Command-line interface for Nostr operations</p>
-                <a href="/examples" class="text-xs text-blue-600 hover:underline">View Example →</a>
+                <a href="/guides" class="text-xs text-blue-600 hover:underline">View Guide →</a>
               </div>
             </div>
           </div>
@@ -1734,10 +1734,10 @@ export class NostrClient extends EventEmitter {
       href: "/guides/testing"
     },
     {
-      title: "Examples",
+      title: "Advanced Guides",
       description: "Explore complete TypeScript project examples",
       icon: "Code",
-      href: "/examples"
+      href: "/guides"
     }
   ]
 };
@@ -2079,10 +2079,10 @@ asyncio.run(bot.start())`
       href: "/guides/rust"
     },
     {
-      title: "Examples",
+      title: "Advanced Guides",
       description: "Explore complete Python project examples",
       icon: "Code",
-      href: "/examples"
+      href: "/guides"
     }
   ]
 };
@@ -2127,7 +2127,7 @@ export const relayConnectionGuide: GuideContent = {
       title: "Explore Examples",
       description: "Ready-to-use project templates",
       icon: "Wrench",
-      href: "/examples"
+      href: "/guides"
     }
   ]
 };
@@ -2196,7 +2196,7 @@ export const conceptsGuide: GuideContent = {
       title: "Explore Examples",
       description: "Complete project templates",
       icon: "Wrench",
-      href: "/examples"
+      href: "/guides"
     }
   ]
 };
@@ -4127,7 +4127,7 @@ export default function() {
   nextSteps: [
     { title: "Performance", description: "Measure before you optimize", icon: "Zap", href: "/guides/performance" },
     { title: "Best Practices", description: "Security and operability", icon: "Shield", href: "/guides/best-practices" },
-    { title: "Examples", description: "Try tested templates", icon: "Code", href: "/examples" }
+    { title: "NIPs", description: "Protocol specifications", icon: "Code", href: "/nips" }
   ]
 };
 
@@ -4218,7 +4218,7 @@ track({ name: 'app_open', ts: Date.now(), ver: 1 })`
   },
   nextSteps: [
     { title: "Architecture", description: "Where analytics fits", icon: "Layers", href: "/guides/architecture" },
-    { title: "Examples", description: "See dashboards and probes", icon: "Code", href: "/examples" },
+    { title: "NIPs", description: "Protocol specifications", icon: "Code", href: "/nips" },
     { title: "Performance", description: "Correlate metrics to speed", icon: "Zap", href: "/guides/performance" }
   ]
 };

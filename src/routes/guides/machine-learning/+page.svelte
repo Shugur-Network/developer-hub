@@ -40,7 +40,14 @@
         {/if}
         {#if key === 'pipeline'}
           <div class="mt-6">
-            <Mermaid chart={`flowchart LR\n  Raw[Raw Events] --> ETL[ETL/Curation]\n  ETL --> FE[Features]\n  FE --> Train[Train]\n  Train --> Eval[Offline Eval]\n  Eval -->|approved| Deploy[Deploy Model]\n  Deploy --> Infer[Real-time Inference]\n  Infer --> Cache`} />
+            <Mermaid chart={`flowchart LR
+  Raw["Raw Events"] --> ETL["ETL/Curation"]
+  ETL --> FE["Features"]
+  FE --> Train["Train"]
+  Train --> Eval["Offline Eval"]
+  Eval -->|approved| Deploy["Deploy Model"]
+  Deploy --> Infer["Real-time Inference"]
+  Infer --> Cache`} />
             <div class="text-xs text-gray-600 mt-3">
               <div><strong>Legend:</strong> Raw events are curated to features, trained and evaluated offline; approved models are deployed to serve real-time inference with caching.</div>
             </div>

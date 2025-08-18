@@ -1,12 +1,11 @@
 <script>
-  import { ExternalLink, BookOpen, Activity, Wrench, GitBranch, Zap, Code, Layers, Globe, FileText, Smartphone, Server, Monitor } from 'lucide-svelte';
-  import ProjectCard from '$lib/components/ProjectCard.svelte';
-  import StatusCard from '$lib/components/StatusCard.svelte';
+  import { Code, BookOpen, Zap, Globe, Server, Users, CheckCircle, ArrowRight, ExternalLink, Gamepad2, ShoppingCart, Bot } from 'lucide-svelte';
+
 </script>
 
 <svelte:head>
-  <title>Shugur Developer Hub - Nostr Protocol Development Guide</title>
-  <meta name="description" content="Complete developer guide for building on Nostr protocol with Shugur relay. Multi-language examples and NIP implementations." />
+  <title>Shugur Developer Hub - Build Decentralized Apps with Nostr</title>
+  <meta name="description" content="Complete developer platform for building on Nostr protocol. Quick start guides, protocol specs, and production-ready relay access." />
 </svelte:head>
 
 <!-- Hero Section -->
@@ -17,231 +16,364 @@
         <Code class="h-12 w-12 text-primary" />
       </div>
     </div>
-    <h1 class="text-4xl md:text-5xl font-display tracking-tight mb-6">
-      Shugur Development Hub
+    <h1 class="text-4xl md:text-6xl font-display tracking-tight mb-6">
+      Build <span class="text-primary">Decentralized Apps</span><br/>
+      <span class="text-3xl md:text-4xl opacity-80">with Nostr Protocol</span>
     </h1>
-    <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-      Your complete guide to building decentralized applications on the Nostr protocol. 
-      Learn with examples in multiple programming languages and connect to Shugur relay.
+    <p class="text-xl md:text-2xl opacity-90 mb-4 max-w-4xl mx-auto leading-relaxed">
+      Skip the centralized platforms. Build apps where users own their data, 
+      can't be deplatformed, and have true freedom of expression.
     </p>
-    <div class="flex flex-wrap justify-center gap-4">
+    
+    <!-- Primary Actions -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
       <a 
         href="/guides" 
-        class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+        class="group px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 hover:scale-105 transition-all flex items-center justify-center gap-2 text-lg shadow-lg shadow-primary/25"
       >
-        Start Building
+        <Zap class="h-5 w-5" />
+        Start Building Now
+        <ArrowRight class="h-4 w-4 group-hover:translate-x-1 transition-transform" />
       </a>
       <a 
-        href="/nips" 
-        class="px-6 py-3 border border-white/20 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
+        href="/guides/concepts" 
+        class="group px-6 py-3 bg-white/10 backdrop-blur text-white rounded-xl font-medium hover:bg-white/20 transition-all flex items-center justify-center gap-2 text-lg border border-white/20"
       >
-        Explore NIPs
+        <BookOpen class="h-5 w-5" />
+        Learn the Protocol
       </a>
     </div>
+    
+    <!-- Secondary Action -->
+    <div class="mb-12">
+      <a 
+        href="/nips" 
+        class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-lg underline underline-offset-4"
+      >
+        <Globe class="h-5 w-5" />
+        View 20+ NIPs Supported by <span class="font-brand">Shugur</span> Network
+        <ArrowRight class="h-4 w-4" />
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- Quick Access Section -->
+<!-- What You Can Build -->
 <section class="py-16 bg-white">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-2xl font-display text-center mb-12">Start Your Nostr Journey</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <a 
-        href="/guides" 
-        class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group"
-      >
-        <BookOpen class="h-8 w-8 text-primary mb-4" />
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Development Guides</h3>
-        <p class="text-sm opacity-80">Step-by-step tutorials organized by programming language</p>
-      </a>
-      
-      <a 
-        href="/nips" 
-        class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group"
-      >
-        <Layers class="h-8 w-8 text-blue-500 mb-4" />
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Supported NIPs</h3>
-        <p class="text-sm opacity-80">Explore Nostr Improvement Proposals supported by Shugur relay</p>
-      </a>
-      
-      <a 
-        href="/examples" 
-        class="p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all group"
-      >
-        <Wrench class="h-8 w-8 text-green-500 mb-4" />
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Code Examples</h3>
-        <p class="text-sm opacity-80">Ready-to-use code snippets and complete project examples</p>
-      </a>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-display mb-4">What You Can Build</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Nostr enables a new generation of decentralized applications. Here's what developers are building.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-blue-100 rounded-lg">
+            <Users class="h-6 w-6 text-blue-600" />
+          </div>
+          <h3 class="font-semibold text-lg">Social Networks</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Decentralized Twitter-like platforms where users own their data and can't be deplatformed.
+        </p>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>User-owned profiles</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Real-time messaging</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Censorship resistance</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-green-100 rounded-lg">
+            <Server class="h-6 w-6 text-green-600" />
+          </div>
+          <h3 class="font-semibold text-lg">Chat Applications</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          End-to-end encrypted messaging apps that work across multiple clients and relays.
+        </p>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Cross-platform messaging</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Group conversations</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>No vendor lock-in</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-purple-100 rounded-lg">
+            <Globe class="h-6 w-6 text-purple-600" />
+          </div>
+          <h3 class="font-semibold text-lg">Content Platforms</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Blogging, news, and media platforms where creators maintain full ownership of their content.
+        </p>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Creator monetization</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Global distribution</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <CheckCircle class="h-4 w-4 text-green-500" />
+            <span>Portable audiences</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Endless Possibilities -->
+    <div class="mt-16 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-display mb-6">...and So Much More</h3>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          These are just the beginning. With Nostr's open protocol, developers are constantly pushing boundaries 
+          and creating innovative applications we never imagined possible.
+        </p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div class="p-4 bg-gray-50 rounded-lg text-center">
+            <div class="mb-3 flex justify-center">
+              <div class="p-2 bg-blue-100 rounded-lg">
+                <Gamepad2 class="h-6 w-6 text-blue-600" />
+              </div>
+            </div>
+            <div class="font-medium">Gaming Platforms</div>
+            <div class="text-sm text-gray-600">Decentralized gaming ecosystems</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg text-center">
+            <div class="mb-3 flex justify-center">
+              <div class="p-2 bg-green-100 rounded-lg">
+                <ShoppingCart class="h-6 w-6 text-green-600" />
+              </div>
+            </div>
+            <div class="font-medium">Marketplaces</div>
+            <div class="text-sm text-gray-600">P2P trading and commerce</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg text-center">
+            <div class="mb-3 flex justify-center">
+              <div class="p-2 bg-purple-100 rounded-lg">
+                <BookOpen class="h-6 w-6 text-purple-600" />
+              </div>
+            </div>
+            <div class="font-medium">Learning Platforms</div>
+            <div class="text-sm text-gray-600">Decentralized education</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg text-center">
+            <div class="mb-3 flex justify-center">
+              <div class="p-2 bg-orange-100 rounded-lg">
+                <Bot class="h-6 w-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="font-medium">AI Assistants</div>
+            <div class="text-sm text-gray-600">Distributed AI services</div>
+          </div>
+        </div>
+        
+        <div class="p-8 bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-xl border border-primary/20">
+          <h4 class="text-xl font-semibold mb-4">Your Imagination is the Only Limit</h4>
+          <p class="text-gray-700 mb-6 max-w-3xl mx-auto">
+            Nostr protocol provides the foundation for any decentralized application you can dream of. 
+            From financial services to IoT networks, from data analytics to entertainment platforms – 
+            if it involves communication and data exchange, you can build it on Nostr.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a 
+              href="/guides" 
+              class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Start Building Your Vision
+            </a>
+            <a 
+              href="/guides/concepts" 
+              class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition-colors"
+            >
+              Explore the Protocol
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Programming Languages Section -->
+<!-- Shugur Relay Info -->
 <section class="py-16 bg-gray-50">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-2xl font-display text-center mb-4">Multi-Language Support</h2>
-    <p class="text-center opacity-80 mb-12">Choose your preferred programming language and get started quickly</p>
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-      <a href="/guides/javascript" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <FileText class="h-6 w-6 text-yellow-500" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">JavaScript</div>
-        <div class="text-xs text-gray-500 mt-1">Web</div>
-      </a>
-      <a href="/guides/typescript" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <FileText class="h-6 w-6 text-blue-600" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">TypeScript</div>
-        <div class="text-xs text-gray-500 mt-1">Web</div>
-      </a>
-      <a href="/guides/python" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Code class="h-6 w-6 text-green-600" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Python</div>
-        <div class="text-xs text-gray-500 mt-1">Backend</div>
-      </a>
-      <a href="/guides/rust" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Server class="h-6 w-6 text-orange-600" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Rust</div>
-        <div class="text-xs text-gray-500 mt-1">Backend</div>
-      </a>
-      <a href="/guides/go" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Zap class="h-6 w-6 text-cyan-600" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Go</div>
-        <div class="text-xs text-gray-500 mt-1">Backend</div>
-      </a>
-      <a href="/guides/swift" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Smartphone class="h-6 w-6 text-gray-800" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Swift</div>
-        <div class="text-xs text-gray-500 mt-1">Mobile</div>
-      </a>
-      <a href="/guides/kotlin" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Smartphone class="h-6 w-6 text-purple-600" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Kotlin</div>
-        <div class="text-xs text-gray-500 mt-1">Mobile</div>
-      </a>
-      <a href="/guides/flutter" class="p-4 bg-white border rounded-lg hover:border-primary hover:shadow-md transition-all text-center group">
-        <div class="flex justify-center mb-2">
-          <Monitor class="h-6 w-6 text-blue-500" />
-        </div>
-        <div class="text-sm font-medium group-hover:text-primary">Flutter</div>
-        <div class="text-xs text-gray-500 mt-1">Mobile</div>
-      </a>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-display mb-4">Production-Ready Relay Network</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Connect to the <span class="font-brand">Shugur</span> relay network for reliable, high-performance Nostr infrastructure. Multiple endpoints hosted by <span class="font-brand">Shugur</span> with comprehensive NIP support.
+      </p>
     </div>
-  </div>
-</section>
-
-<!-- Projects Section -->
-<section id="relay" class="py-16 bg-white">
-  <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-2xl font-display text-center mb-4">Shugur Relay</h2>
-    <p class="text-center opacity-80 mb-12">A reliable, developer-friendly Nostr relay with comprehensive NIP support</p>
     
     <div class="max-w-4xl mx-auto">
-      <ProjectCard
-        title="Shugur Nostr Relay"
-        description="Production-ready Nostr relay with transparent policies, comprehensive documentation, and multi-NIP support for your decentralized applications."
-        status="Production"
-        statusColor="green"
-        links={[
-          { href: "wss://shu01.shugur.net", label: "Connect (wss://shu01.shugur.net)", icon: "zap" },
-          { href: "/nips", label: "Supported NIPs", icon: "layers" },
-          { href: "https://shugur.net", label: "Status & Uptime", icon: "activity" },
-          { href: "/guides", label: "Integration Guide", icon: "book" }
-        ]}
-        features={[
-          "WebSocket endpoint: wss://shu01.shugur.net",
-          "22 NIPs supported: 01, 02, 03, 04, 09, 11, 15, 16, 17, 20, 22, 23, 24, 25, 28, 33, 40, 44, 50, 59, 65, 78",
-          "Rate limiting with generous limits for developers",
-          "Real-time monitoring and 99.9% uptime SLA",
-          "Free for personal projects and open source"
-        ]}
-      />
+      <div class="bg-white p-8 rounded-xl border hover:shadow-lg transition-shadow">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <div class="p-3 bg-primary/10 rounded-lg">
+              <Server class="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold"><span class="font-brand">Shugur</span> Relay Network</h3>
+              <p class="text-gray-600">Enterprise-grade infrastructure with multiple endpoints and 20+ NIPs supported</p>
+            </div>
+          </div>
+          <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+            Production Ready
+          </span>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h4 class="font-semibold mb-3">Network Endpoint</h4>
+            <div class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
+              wss://shu01.shugur.net
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Primary endpoint - view network status for all available endpoints</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Supported Features</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Multiple endpoints for high availability</li>
+              <li>• 20+ NIPs implemented across the network</li>
+              <li>• Rate limiting protection</li>
+              <li>• Real-time monitoring and status tracking</li>
+              <li>• Free for development</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-4">
+          <a 
+            href="/guides" 
+            class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+          >
+            Get Started
+          </a>
+          <a 
+            href="/nips" 
+            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium"
+          >
+            View Supported NIPs
+          </a>
+          <a 
+            href="https://shugur.net" 
+            target="_blank"
+            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium flex items-center gap-2"
+          >
+            <ExternalLink class="h-4 w-4" />
+            View Network Status
+          </a>
+          <a 
+            href="https://github.com/Shugur-Network/relay" 
+            target="_blank"
+            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium flex items-center gap-2"
+          >
+            <ExternalLink class="h-4 w-4" />
+            Relay Repository
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Status Overview -->
+<!-- Advanced Features -->
 <section class="py-16 bg-white">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-2xl font-display text-center mb-12">System Status</h2>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <StatusCard
-        service="Nostr Relay"
-        status="Operational"
-        uptime="99.9%"
-        endpoint="shugur.com"
-      />
-      <StatusCard
-        service="Documentation"
-        status="Operational"
-        uptime="99.9%"
-        endpoint="docs.shugur.com"
-      />
-      <StatusCard
-        service="Status Page"
-        status="Operational"
-        uptime="99.8%"
-        endpoint="shugur.net"
-      />
-      <StatusCard
-        service="Company Site"
-        status="Operational"
-        uptime="99.9%"
-        endpoint="shugur.com"
-      />
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-display mb-4">Advanced Developer Resources</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Take your Nostr applications to the next level with production-ready guides and best practices.
+      </p>
     </div>
     
-    <div class="text-center mt-8">
-      <a 
-        href="https://shugur.net" 
-        class="inline-flex items-center gap-2 text-primary hover:underline"
-      >
-        View detailed status page
-        <ExternalLink class="h-4 w-4" />
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="/guides/architecture" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="p-3 bg-blue-100 rounded-lg mb-4 w-fit">
+          <Globe class="h-6 w-6 text-blue-600" />
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-primary">System Architecture</h3>
+        <p class="text-sm text-gray-600">Design scalable and resilient Nostr applications</p>
+      </a>
+      
+      <a href="/guides/performance" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="p-3 bg-green-100 rounded-lg mb-4 w-fit">
+          <Zap class="h-6 w-6 text-green-600" />
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Performance</h3>
+        <p class="text-sm text-gray-600">Optimize relay connections and event handling</p>
+      </a>
+      
+      <a href="/guides/testing" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="p-3 bg-purple-100 rounded-lg mb-4 w-fit">
+          <CheckCircle class="h-6 w-6 text-purple-600" />
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Testing</h3>
+        <p class="text-sm text-gray-600">Comprehensive testing strategies for Nostr apps</p>
+      </a>
+      
+      <a href="/guides/best-practices" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+        <div class="p-3 bg-orange-100 rounded-lg mb-4 w-fit">
+          <Server class="h-6 w-6 text-orange-600" />
+        </div>
+        <h3 class="font-semibold mb-2 group-hover:text-primary">Best Practices</h3>
+        <p class="text-sm text-gray-600">Security, privacy, and operational excellence</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section class="py-16 bg-dark text-white">
+
+<!-- Call to Action -->
+<section class="py-16 bg-primary text-white">
   <div class="mx-auto max-w-4xl px-4 text-center">
-    <h2 class="text-2xl font-display mb-4">Join the Nostr Community</h2>
-    <p class="opacity-90 mb-8">
-      Questions about Nostr development or need help with Shugur relay? Connect with the community.
+    <h2 class="text-3xl font-display mb-4">Ready to Build?</h2>
+    <p class="text-xl opacity-90 mb-8">
+      Join thousands of developers building the future of decentralized applications.
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a 
+        href="/guides" 
+        class="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+      >
+        Start Building Now
+      </a>
+      <a 
         href="https://github.com/Shugur-Network" 
-        class="px-6 py-3 bg-white/10 text-white rounded-lg font-medium hover:bg-white/20 transition-colors"
+        target="_blank"
+        class="px-8 py-4 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors flex items-center gap-2"
       >
-        GitHub
-      </a>
-      <a 
-        href="/guides/getting-started" 
-        class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
-      >
-        Get Started
-      </a>
-      <a 
-        href="mailto:developers@shugur.com" 
-        class="px-6 py-3 bg-white/10 text-white rounded-lg font-medium hover:bg-white/20 transition-colors"
-      >
-        Email Support
+        <ExternalLink class="h-5 w-5" />
+        View on GitHub
       </a>
     </div>
   </div>

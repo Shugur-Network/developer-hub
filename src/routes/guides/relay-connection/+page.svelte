@@ -96,7 +96,16 @@
     </div>
     <div class="mt-8">
       <h3 class="font-semibold mb-3">Sequence Diagram</h3>
-      <Mermaid chart={`sequenceDiagram\n  participant C as Client\n  participant R as Relay\n  C->>R: CONNECT (WS)\n  R-->>C: 101 Switching Protocols\n  C->>R: REQ [filters]\n  R-->>C: EVENT ...\n  R-->>C: EOSE\n  C->>R: EVENT [signed]\n  R-->>C: OK [accepted]`} />
+      <Mermaid chart={`sequenceDiagram
+  participant C as Client
+  participant R as Relay
+  C->>R: CONNECT (WS)
+  R-->>C: 101 Switching Protocols
+  C->>R: REQ [filters]
+  R-->>C: EVENT ...
+  R-->>C: EOSE
+  C->>R: EVENT [signed]
+  R-->>C: OK [accepted]`} />
       <div class="text-xs text-gray-600 mt-3">
         <div><strong>Legend:</strong> Client opens WS, subscribes with REQ; Relay streams EVENTs until EOSE; Client publishes EVENT; Relay returns OK.</div>
       </div>

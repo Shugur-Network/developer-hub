@@ -41,7 +41,13 @@
         {#if key === 'release'}
           <div class="mt-6">
             <h3 class="font-semibold mb-3">Release Pipeline</h3>
-            <Mermaid chart={`flowchart LR\n  Dev[Build] --> QA[QA/Manual Tests]\n  QA --> Beta[Beta/TF]\n  Beta --> Review[Store Review]\n  Review --> Rollout[Phased Rollout]\n  Rollout --> Monitor[Monitoring]\n  Monitor -->|rollback| Dev`} />
+            <Mermaid chart={`flowchart LR
+  Dev["Build"] --> QA["QA/Manual Tests"]
+  QA --> Beta["Beta/TF"]
+  Beta --> Review["Store Review"]
+  Review --> Rollout["Phased Rollout"]
+  Rollout --> Monitor["Monitoring"]
+  Monitor -->|rollback| Dev`} />
           </div>
         {/if}
         {#if section.steps}

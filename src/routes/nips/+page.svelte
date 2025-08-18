@@ -157,28 +157,28 @@
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="/guides/getting-started" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
+      <a href="/guides" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
         <div class="text-primary mb-3">
           <Rocket class="h-6 w-6" />
         </div>
         <h3 class="font-semibold mb-2">Quick Start Guide</h3>
-        <p class="text-sm text-gray-600">Get connected to Shugur relay in 5 minutes</p>
+        <p class="text-sm text-gray-600">5-step guide to handle Nostr events in any language</p>
       </a>
       
-      <a href="/guides/javascript" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
+      <a href="/guides/concepts" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
         <div class="text-primary mb-3">
           <Code class="h-6 w-6" />
         </div>
-        <h3 class="font-semibold mb-2">Code Examples</h3>
-        <p class="text-sm text-gray-600">Working examples in multiple languages</p>
+        <h3 class="font-semibold mb-2">Core Concepts</h3>
+        <p class="text-sm text-gray-600">Understand keys, events, relays and the protocol</p>
       </a>
       
-      <a href="/examples" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
+      <a href="/guides/architecture" class="bg-white p-6 rounded-xl border hover:border-primary hover:shadow-lg transition-all">
         <div class="text-primary mb-3">
           <Settings class="h-6 w-6" />
         </div>
-        <h3 class="font-semibold mb-2">Sample Projects</h3>
-        <p class="text-sm text-gray-600">Complete application examples</p>
+        <h3 class="font-semibold mb-2">Advanced Topics</h3>
+        <p class="text-sm text-gray-600">Architecture, performance, and production guides</p>
       </a>
     </div>
   </div>

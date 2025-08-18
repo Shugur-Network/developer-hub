@@ -41,7 +41,17 @@
         {#if key === 'connection'}
           <div class="mt-6">
             <h3 class="font-semibold mb-3">Relay Subscription Fan-out</h3>
-            <Mermaid chart={`flowchart LR\n  Client --> R1[(Relay A)]\n  Client --> R2[(Relay B)]\n  Client --> R3[(Relay C)]\n  R1 --> SubA[Events]\n  R2 --> SubB[Events]\n  R3 --> SubC[Events]\n  SubA --> M[Multiplexer]\n  SubB --> M\n  SubC --> M\n  M --> App[App Timeline]`} />
+            <Mermaid chart={`flowchart LR
+  Client --> R1["Relay A"]
+  Client --> R2["Relay B"]
+  Client --> R3["Relay C"]
+  R1 --> SubA["Events"]
+  R2 --> SubB["Events"]
+  R3 --> SubC["Events"]
+  SubA --> M["Multiplexer"]
+  SubB --> M
+  SubC --> M
+  M --> App["App Timeline"]`} />
             <div class="text-xs text-gray-600 mt-3">
               <div><strong>Legend:</strong> Client opens subscriptions to multiple relays and merges them in a Multiplexer before rendering the App timeline.</div>
             </div>

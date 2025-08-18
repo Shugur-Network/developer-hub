@@ -50,7 +50,14 @@
         {/if}
         {#if key === 'reference'}
           <div class="mt-6">
-            <Mermaid chart={`graph TD;\n  Client[\"Client Apps\"] -->|WS| Relays[(Relays)];\n  Client -->|HTTPS| APIGateway[\"API Gateway\"];\n  APIGateway --> Workers[\"Workers/Queues\"];\n  Workers --> Storage[(\"DB/Object\")];\n  APIGateway --> Observability[\"Metrics/Logs/Traces\"];\n  Workers --> Observability;\n  Relays --> Observability;`} />
+            <Mermaid chart={`graph TD
+  Client["Client Apps"] -->|WS| Relays["Relays"]
+  Client -->|HTTPS| APIGateway["API Gateway"]
+  APIGateway --> Workers["Workers/Queues"]
+  Workers --> Storage["Database/Storage"]
+  APIGateway --> Observability["Metrics/Logs/Traces"]
+  Workers --> Observability
+  Relays --> Observability`} />
             <div class="text-xs text-gray-600 mt-3">
               <div><strong>Legend:</strong> Client Apps connect to multiple Relays (WS) and APIs (HTTPS). API gateways enqueue work for Workers, which persist to Storage. All components emit telemetry to Observability.</div>
             </div>

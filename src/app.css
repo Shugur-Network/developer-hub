@@ -17,7 +17,7 @@ body {
 }
 
 h1, h2, h3 { 
-  @apply font-display; 
+  @apply font-body; 
 }
 
 /* Dark theme overrides */

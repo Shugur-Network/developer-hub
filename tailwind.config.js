@@ -9,8 +9,9 @@ export default {
         lightbg: '#FAFAFA'
       },
       fontFamily: {
-        display: ['League Spartan', 'ui-sans-serif', 'system-ui'],
-        body: ['Roboto', 'ui-sans-serif', 'system-ui']
+        'brand': ['League Spartan', 'ui-sans-serif', 'system-ui'],
+        'display': ['Inter', 'ui-sans-serif', 'system-ui'],
+        'body': ['Inter', 'ui-sans-serif', 'system-ui']
       }
     }
   },

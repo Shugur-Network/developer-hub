@@ -9,11 +9,10 @@
       </div>
     </div>
     <nav class="flex gap-6 text-sm text-gray-300">
-      <a href="/guides" class="hover:text-primary">Guides</a>
+      <a href="/guides" class="hover:text-primary">Quick Start</a>
       <a href="/nips" class="hover:text-primary">NIPs</a>
-      <a href="/examples" class="hover:text-primary">Examples</a>
-      <a href="https://shugur.net" class="hover:text-primary">Status</a>
-      <a href="https://shugur.com" class="hover:text-primary">Company</a>
+      <a href="https://shugur.net" class="hover:text-primary">Network</a>
+      <a href="https://github.com/Shugur-Network" class="hover:text-primary">GitHub</a>
     </nav>
   </div>
 </header>

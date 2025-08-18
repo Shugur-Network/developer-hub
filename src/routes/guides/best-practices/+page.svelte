@@ -73,8 +73,8 @@
       <a href="/guides" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
         Back to Guides
       </a>
-      <a href="/guides/getting-started" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-        Getting Started
+      <a href="/guides" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+        Quick Start Guide
       </a>
     </div>
   </div>
