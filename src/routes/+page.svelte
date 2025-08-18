@@ -282,7 +282,7 @@
             href="/nips" 
             class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium"
           >
-            View Supported NIPs
+          Supported NIPs
           </a>
           <a 
             href="https://shugur.net" 
@@ -290,15 +290,7 @@
             class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium flex items-center gap-2"
           >
             <ExternalLink class="h-4 w-4" />
-            View Network Status
-          </a>
-          <a 
-            href="https://github.com/Shugur-Network/relay" 
-            target="_blank"
-            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary hover:text-primary transition-colors font-medium flex items-center gap-2"
-          >
-            <ExternalLink class="h-4 w-4" />
-            Relay Repository
+            Status
           </a>
         </div>
       </div>
