@@ -70,11 +70,11 @@
     </div>
     
     <div class="flex justify-center gap-4">
-      <a href="/guides" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
-        Back to Guides
+      <a href="/guides/advanced" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+        Development Guidance
       </a>
-      <a href="/guides" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-        Quick Start Guide
+      <a href="/guides/architecture" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+        System Architecture
       </a>
     </div>
   </div>

@@ -70,7 +70,7 @@
 
 <GuideNextSteps
   title="Next steps"
-  description="Build ML pipelines in Python and measure impact with analytics."
+  description="Explore analytics integration, system architecture, and implementation approaches for ML in Nostr."
   nextSteps={machineLearningGuide.nextSteps}
 />
 

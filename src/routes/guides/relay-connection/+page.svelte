@@ -253,5 +253,14 @@ relay = asyncio.run(connect())`}</code></pre>
         </a>
       {/each}
     </div>
+    
+    <div class="mt-8 pt-8 border-t border-white/20">
+      <a 
+        href="/guides/advanced" 
+        class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+      >
+        ← Back to Development Guidance
+      </a>
+    </div>
   </div>
 </section>

@@ -3842,19 +3842,7 @@ export const architectureGuide: GuideContent = {
         { title: "Backups", description: "Archive raw events to object storage; test restore procedures." }
       ]
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Clone-and-run blueprints to learn the architecture",
-      icon: "GitBranch",
-      bgColor: "bg-white",
-      iconColor: "text-blue-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-blue-700">
-          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
-          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Nostr Relay Monitor</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
     { title: "Performance", description: "Optimize throughput and latency", icon: "Zap", href: "/guides/performance" },
@@ -4006,19 +3994,7 @@ function onEvent(ev: any) { cache.set(ev.id, ev) }`
         { title: "Load Tests", description: "Continuously run representative scenarios." }
       ]
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Profiles, caches, and batching in practice",
-      icon: "GitBranch",
-      bgColor: "bg-gray-50",
-      iconColor: "text-orange-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-orange-700">
-          <li><a href="https://github.com/Shugur-Network/nostr-publisher-cli" target="_blank" rel="noopener" class="underline">Nostr Publisher CLI</a></li>
-          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Relay Monitor</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
     { title: "Architecture", description: "Design for scale from the start", icon: "Layers", href: "/guides/architecture" },
@@ -4110,19 +4086,7 @@ export default function() {
 }`
       }
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Start with a bot or client and add tests",
-      icon: "GitBranch",
-      bgColor: "bg-white",
-      iconColor: "text-green-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-emerald-700">
-          <li><a href="https://github.com/Shugur-Network/nostr-bot-framework" target="_blank" rel="noopener" class="underline">Nostr Bot Framework</a></li>
-          <li><a href="https://github.com/Shugur-Network/nostr-simple-client" target="_blank" rel="noopener" class="underline">Simple Nostr Client</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
     { title: "Performance", description: "Measure before you optimize", icon: "Zap", href: "/guides/performance" },
@@ -4202,19 +4166,7 @@ track({ name: 'app_open', ts: Date.now(), ver: 1 })`
        └────────── Dashboards ◀─────────── Metrics/Exports ◀─────────┘</pre>
         </div>`
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Dashboards and collectors",
-      icon: "GitBranch",
-      bgColor: "bg-white",
-      iconColor: "text-purple-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-purple-700">
-          <li><a href="https://github.com/Shugur-Network/nostr-relay-monitor" target="_blank" rel="noopener" class="underline">Relay Monitor</a></li>
-          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
     { title: "Architecture", description: "Where analytics fits", icon: "Layers", href: "/guides/architecture" },
@@ -4293,24 +4245,12 @@ print(len(emb[0]))`
       iconColor: "text-pink-600",
       content: `<p class="text-gray-600">Define task metrics (CTR, abuse catch-rate), offline AUC/precision-recall, and run online A/B tests gated by safety checks.</p>`
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Pipelines and ranking integrations",
-      icon: "GitBranch",
-      bgColor: "bg-white",
-      iconColor: "text-pink-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-rose-700">
-          <li><a href="https://github.com/Shugur-Network/nostr-simple-client" target="_blank" rel="noopener" class="underline">Simple Nostr Client</a></li>
-          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App (ranking hooks)</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
-    { title: "Python", description: "Build ML pipelines", icon: "Terminal", href: "/guides/python" },
     { title: "Analytics", description: "Measure model impact", icon: "Activity", href: "/guides/analytics" },
-    { title: "Architecture", description: "Where ML fits in", icon: "Layers", href: "/guides/architecture" }
+    { title: "Architecture", description: "Where ML fits in systems", icon: "Layers", href: "/guides/architecture" },
+    { title: "Python", description: "Implementation with Python libraries", icon: "Terminal", href: "/guides/python" }
   ]
 };
 

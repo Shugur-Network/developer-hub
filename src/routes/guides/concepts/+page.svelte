@@ -1,5 +1,5 @@
 <script>
-  import { Copy, CheckCircle, Key, Globe, Zap, Lock, Users, Server, MessageSquare, Shield, Network, Database, XCircle } from 'lucide-svelte';
+  import { Copy, CheckCircle, Key, Globe, Zap, Lock, Users, Server, MessageSquare, Shield, Network, Database, XCircle, Settings } from 'lucide-svelte';
   
   let copied = false;
   
@@ -429,12 +429,12 @@
         <h3 class="font-semibold mb-2">Explore NIPs</h3>
         <p class="text-sm opacity-90">Discover all supported protocol extensions</p>
       </a>
-      <a href="/guides/architecture" class="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-colors">
+      <a href="/guides/advanced" class="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-colors">
         <div class="flex justify-center mb-3">
-          <Users class="h-8 w-8 text-white" />
+          <Settings class="h-8 w-8 text-white" />
         </div>
-        <h3 class="font-semibold mb-2">Advanced Topics</h3>
-        <p class="text-sm opacity-90">Architecture, performance, and testing guides</p>
+        <h3 class="font-semibold mb-2">Development Guidance</h3>
+        <p class="text-sm opacity-90">Professional development practices and guidance</p>
       </a>
     </div>
   </div>

@@ -56,4 +56,29 @@
   </div>
 </section>
 
+<!-- Next Steps -->
+<section class="py-16 bg-primary text-white">
+  <div class="mx-auto max-w-4xl px-4 text-center">
+    <h2 class="text-3xl font-display mb-4">Ready to Contribute?</h2>
+    <p class="text-xl opacity-90 mb-8">
+      Help make the Shugur Developer Hub even better for the community.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a 
+        href="/guides/advanced" 
+        class="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+      >
+        View Development Guidance
+      </a>
+      <a 
+        href="https://github.com/Shugur-Network" 
+        target="_blank"
+        class="px-8 py-4 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors"
+      >
+        View GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
 

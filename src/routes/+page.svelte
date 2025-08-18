@@ -1,5 +1,5 @@
 <script>
-  import { Code, BookOpen, Zap, Globe, Server, Users, CheckCircle, ArrowRight, ExternalLink, Gamepad2, ShoppingCart, Bot } from 'lucide-svelte';
+  import { Code, BookOpen, Zap, Globe, Server, Users, CheckCircle, ArrowRight, ExternalLink, Gamepad2, ShoppingCart, Bot, Settings } from 'lucide-svelte';
 
 </script>
 
@@ -306,47 +306,58 @@
   </div>
 </section>
 
-<!-- Advanced Features -->
+<!-- Advanced Topics Preview -->
 <section class="py-16 bg-white">
   <div class="mx-auto max-w-6xl px-4">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-display mb-4">Advanced Developer Resources</h2>
+      <h2 class="text-3xl font-display mb-4">Professional Development Resources</h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Take your Nostr applications to the next level with production-ready guides and best practices.
+        Enterprise-grade development guidance for building robust, scalable Nostr applications.
       </p>
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a href="/guides/architecture" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="p-6 border rounded-xl">
         <div class="p-3 bg-blue-100 rounded-lg mb-4 w-fit">
           <Globe class="h-6 w-6 text-blue-600" />
         </div>
-        <h3 class="font-semibold mb-2 group-hover:text-primary">System Architecture</h3>
-        <p class="text-sm text-gray-600">Design scalable and resilient Nostr applications</p>
-      </a>
+        <h3 class="font-semibold mb-2">System Architecture</h3>
+        <p class="text-sm text-gray-600">Design scalable and resilient applications</p>
+      </div>
       
-      <a href="/guides/performance" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+      <div class="p-6 border rounded-xl">
         <div class="p-3 bg-green-100 rounded-lg mb-4 w-fit">
           <Zap class="h-6 w-6 text-green-600" />
         </div>
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Performance</h3>
-        <p class="text-sm text-gray-600">Optimize relay connections and event handling</p>
-      </a>
+        <h3 class="font-semibold mb-2">Performance</h3>
+        <p class="text-sm text-gray-600">Optimize connections and event handling</p>
+      </div>
       
-      <a href="/guides/testing" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+      <div class="p-6 border rounded-xl">
         <div class="p-3 bg-purple-100 rounded-lg mb-4 w-fit">
           <CheckCircle class="h-6 w-6 text-purple-600" />
         </div>
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Testing</h3>
-        <p class="text-sm text-gray-600">Comprehensive testing strategies for Nostr apps</p>
-      </a>
+        <h3 class="font-semibold mb-2">Testing</h3>
+        <p class="text-sm text-gray-600">Comprehensive testing strategies</p>
+      </div>
       
-      <a href="/guides/best-practices" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
+      <div class="p-6 border rounded-xl">
         <div class="p-3 bg-orange-100 rounded-lg mb-4 w-fit">
           <Server class="h-6 w-6 text-orange-600" />
         </div>
-        <h3 class="font-semibold mb-2 group-hover:text-primary">Best Practices</h3>
-        <p class="text-sm text-gray-600">Security, privacy, and operational excellence</p>
+        <h3 class="font-semibold mb-2">Best Practices</h3>
+        <p class="text-sm text-gray-600">Security and operational excellence</p>
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <a 
+        href="/guides/advanced" 
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+      >
+        <Settings class="h-5 w-5" />
+        View Development Guidance
+        <ArrowRight class="h-4 w-4" />
       </a>
     </div>
   </div>
