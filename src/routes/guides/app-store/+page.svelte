@@ -42,12 +42,12 @@
           <div class="mt-6">
             <h3 class="font-semibold mb-3">Release Pipeline</h3>
             <Mermaid chart={`flowchart LR
-  Dev["Build"] --> QA["QA/Manual Tests"]
-  QA --> Beta["Beta/TF"]
-  Beta --> Review["Store Review"]
-  Review --> Rollout["Phased Rollout"]
-  Rollout --> Monitor["Monitoring"]
-  Monitor -->|rollback| Dev`} />
+    Dev[Build] --> QA[QA Manual Tests]
+    QA --> Beta[Beta TestFlight]
+    Beta --> Review[Store Review]
+    Review --> Rollout[Phased Rollout]
+    Rollout --> Monitor[Monitoring]
+    Monitor -->|rollback| Dev`} />
           </div>
         {/if}
         {#if section.steps}

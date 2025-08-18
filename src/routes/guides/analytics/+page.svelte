@@ -40,14 +40,14 @@
         {/if}
         {#if key === 'observability'}
           <div class="mt-6">
-            <Mermaid chart={`graph LR
-  Client --> Collector
-  Collector --> Queue
-  Queue --> Aggregator
-  Aggregator --> Warehouse
-  Warehouse --> Dashboards
-  Aggregator --> Exports
-  Dashboards --> Users`} />
+            <Mermaid chart={`flowchart LR
+    Client --> Collector
+    Collector --> Queue
+    Queue --> Aggregator
+    Aggregator --> Warehouse
+    Warehouse --> Dashboards
+    Aggregator --> Exports
+    Dashboards --> Users`} />
             <div class="text-xs text-gray-600 mt-3">
               <div><strong>Legend:</strong> Client events go to a Collector, buffered in a Queue, aggregated and stored in a Warehouse. Dashboards and Exports use the curated data.</div>
             </div>

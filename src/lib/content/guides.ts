@@ -357,28 +357,22 @@ quickStart().catch(console.error)`
   },
   nextSteps: [
     {
-      title: "JavaScript Guide",
-      description: "Build web applications with JavaScript and Node.js",
-      icon: "FileText",
-      href: "/guides/javascript"
+      title: "Quick Start Guide",
+      description: "Get started with Nostr development in your preferred language",
+      icon: "Zap",
+      href: "/guides"
     },
     {
-      title: "TypeScript Guide",
-      description: "Build type-safe applications with TypeScript",
-      icon: "Code",
-      href: "/guides/typescript"
+      title: "Development Guidance",
+      description: "Professional development practices and advanced topics",
+      icon: "Settings",
+      href: "/guides/advanced"
     },
     {
-      title: "Python Guide",
-      description: "Build bots and backend services",
-      icon: "Terminal",
-      href: "/guides/python"
-    },
-    {
-      title: "Mobile Development",
-      description: "Build mobile apps with Flutter and Kotlin",
-      icon: "Smartphone",
-      href: "/guides/flutter"
+      title: "System Architecture",
+      description: "Design scalable and resilient applications",
+      icon: "Layers",
+      href: "/guides/architecture"
     }
   ]
 };
@@ -2090,13 +2084,13 @@ asyncio.run(bot.start())`
 // Relay Connection Guide
 export const relayConnectionGuide: GuideContent = {
   title: "Connect to Shugur Relay",
-  description: "Get connected to our production Nostr relay in minutes",
+  description: "Connect to our distributed HA relay cluster - single endpoint, automatic failover, full redundancy",
   heroIcon: "Globe",
   tags: ["WebSocket", "Connection", "Production"],
   sections: {
     connectionInfo: {
       title: "Connection Details",
-      description: "Essential information for connecting to Shugur relay",
+      description: "Single connection point to our distributed relay cluster",
       icon: "Zap"
     },
     examples: {
@@ -2112,22 +2106,22 @@ export const relayConnectionGuide: GuideContent = {
   },
   nextSteps: [
     {
-      title: "Send Your First Event",
-      description: "Learn to publish events to the network",
+      title: "Quick Start Guide",
+      description: "Learn to publish events with native tools",
       icon: "Rocket",
-      href: "/guides/getting-started"
-    },
-    {
-      title: "Choose Your Language",
-      description: "Deep dive into language-specific guides",
-      icon: "Monitor",
-      href: "/guides/javascript"
-    },
-    {
-      title: "Explore Examples",
-      description: "Ready-to-use project templates",
-      icon: "Wrench",
       href: "/guides"
+    },
+    {
+      title: "Core Concepts",
+      description: "Master the fundamentals of Nostr protocol",
+      icon: "FileText",
+      href: "/guides/concepts"
+    },
+    {
+      title: "Development Guidance",
+      description: "Professional development practices",
+      icon: "Settings",
+      href: "/guides/advanced"
     }
   ]
 };
@@ -3725,7 +3719,7 @@ enum NostrError: Error {
 // Architecture Guide
 export const architectureGuide: GuideContent = {
   title: "System Architecture",
-  description: "Design scalable, reliable Nostr systems: clients, backends, and relays working together across multiple regions and relays.",
+  description: "Design scalable, reliable Nostr systems. Learn traditional multi-relay patterns and modern HA cluster architectures like Shugur's distributed relay network.",
   heroIcon: "Layers",
   tags: ["Distributed Systems", "Multi-Relay", "Scalability", "Reliability"],
   sections: {
@@ -3998,8 +3992,8 @@ function onEvent(ev: any) { cache.set(ev.id, ev) }`
   },
   nextSteps: [
     { title: "Architecture", description: "Design for scale from the start", icon: "Layers", href: "/guides/architecture" },
-    { title: "Rust", description: "High-performance implementations", icon: "Server", href: "/guides/rust" },
-    { title: "Go", description: "Efficient backends and workers", icon: "Zap", href: "/guides/go" }
+    { title: "Testing", description: "Comprehensive testing strategies", icon: "CheckCircle", href: "/guides/testing" },
+    { title: "Best Practices", description: "Security and operational excellence", icon: "Shield", href: "/guides/best-practices" }
   ]
 };
 
@@ -4158,13 +4152,7 @@ track({ name: 'app_open', ts: Date.now(), ver: 1 })`
       icon: "Server",
       bgColor: "bg-white",
       iconColor: "text-purple-600",
-      content: `<p class="text-gray-600">Track relay health, connection success, subscription lag, and publish acceptance rates.</p>
-        <div class="mt-4">
-          <h4 class="font-semibold mb-2">Data Flow</h4>
-          <pre class="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-x-auto">Client events ─▶ Collector ─▶ Queue ─▶ Aggregator ─▶ Warehouse
-       │                                                             │
-       └────────── Dashboards ◀─────────── Metrics/Exports ◀─────────┘</pre>
-        </div>`
+      content: `<p class="text-gray-600">Track relay health, connection success, subscription lag, and publish acceptance rates.</p>`
     },
 
   },
@@ -4250,7 +4238,7 @@ print(len(emb[0]))`
   nextSteps: [
     { title: "Analytics", description: "Measure model impact", icon: "Activity", href: "/guides/analytics" },
     { title: "Architecture", description: "Where ML fits in systems", icon: "Layers", href: "/guides/architecture" },
-    { title: "Python", description: "Implementation with Python libraries", icon: "Terminal", href: "/guides/python" }
+    { title: "Quick Start Guide", description: "Start building with native tools and libraries", icon: "Zap", href: "/guides" }
   ]
 };
 
@@ -4309,24 +4297,12 @@ export const appStoreGuide: GuideContent = {
         { title: "Phased Rollout", description: "Release to rings; monitor metrics; rollback plan." }
       ]
     },
-    examples: {
-      title: "Runnable Examples",
-      description: "Mobile clients and store-ready setups",
-      icon: "GitBranch",
-      bgColor: "bg-white",
-      iconColor: "text-emerald-600",
-      content: `
-        <ul class="list-disc ml-6 text-sm text-teal-700">
-          <li><a href="https://github.com/Shugur-Network/mobile-nostr-client" target="_blank" rel="noopener" class="underline">Mobile Nostr Client</a></li>
-          <li><a href="https://github.com/Shugur-Network/react-nostr-app" target="_blank" rel="noopener" class="underline">React Nostr App</a></li>
-        </ul>
-      `
-    }
+
   },
   nextSteps: [
-    { title: "Swift", description: "Build iOS apps", icon: "Smartphone", href: "/guides/swift" },
-    { title: "Kotlin", description: "Build Android apps", icon: "Smartphone", href: "/guides/kotlin" },
-    { title: "Flutter", description: "Cross-platform app", icon: "Monitor", href: "/guides/flutter" }
+    { title: "Development Guidance", description: "Professional mobile development practices", icon: "Settings", href: "/guides/advanced" },
+    { title: "Performance", description: "Optimize mobile app performance", icon: "Zap", href: "/guides/performance" },
+    { title: "Testing", description: "Mobile app testing strategies", icon: "CheckCircle", href: "/guides/testing" }
   ]
 };
 

@@ -97,15 +97,15 @@
     <div class="mt-8">
       <h3 class="font-semibold mb-3">Sequence Diagram</h3>
       <Mermaid chart={`sequenceDiagram
-  participant C as Client
-  participant R as Relay
-  C->>R: CONNECT (WS)
-  R-->>C: 101 Switching Protocols
-  C->>R: REQ [filters]
-  R-->>C: EVENT ...
-  R-->>C: EOSE
-  C->>R: EVENT [signed]
-  R-->>C: OK [accepted]`} />
+    participant C as Client
+    participant R as Relay
+    C->>R: CONNECT WebSocket
+    R-->>C: 101 Switching Protocols
+    C->>R: REQ with filters
+    R-->>C: EVENT data
+    R-->>C: EOSE
+    C->>R: EVENT signed
+    R-->>C: OK accepted`} />
       <div class="text-xs text-gray-600 mt-3">
         <div><strong>Legend:</strong> Client opens WS, subscribes with REQ; Relay streams EVENTs until EOSE; Client publishes EVENT; Relay returns OK.</div>
       </div>

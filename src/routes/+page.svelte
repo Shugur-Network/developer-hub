@@ -230,7 +230,7 @@
     <div class="text-center mb-12">
       <h2 class="text-3xl font-display mb-4">Production-Ready Relay Network</h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Connect to the <span class="font-brand">Shugur</span> relay network for reliable, high-performance Nostr infrastructure. Multiple endpoints hosted by <span class="font-brand">Shugur</span> with comprehensive NIP support.
+        Connect to the <span class="font-brand">Shugur</span> distributed relay cluster for reliable, high-performance Nostr infrastructure. Unlike traditional setups requiring multiple relay connections, our HA cluster lets you connect to a single endpoint while automatically ensuring data availability and failover protection.
       </p>
     </div>
     
@@ -262,7 +262,7 @@
           <div>
             <h4 class="font-semibold mb-3">Supported Features</h4>
             <ul class="text-sm text-gray-600 space-y-1">
-              <li>• Multiple endpoints for high availability</li>
+              <li>• Single connection with distributed HA cluster</li>
               <li>• 20+ NIPs implemented across the network</li>
               <li>• Rate limiting protection</li>
               <li>• Real-time monitoring and status tracking</li>

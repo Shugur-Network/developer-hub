@@ -34,7 +34,7 @@
       Quick Start Guide
     </h1>
     <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-      Universal 5-step guide to handle Nostr events in any programming language. Get publishing and receiving events in minutes.
+      Universal 5-step guide to handle Nostr events in any programming language. Connect to Shugur's HA relay cluster and get publishing and receiving events in minutes.
     </p>
   </div>
 </section>

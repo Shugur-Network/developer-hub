@@ -249,8 +249,24 @@
     </div>
     
     <p class="text-gray-600 mb-8">
-      Relays are simple servers that store and forward events. Unlike traditional social networks, you can connect to multiple relays simultaneously, and anyone can run a relay.
+      Relays are simple servers that store and forward events. Unlike traditional social networks, you can connect to multiple relays simultaneously, and anyone can run a relay. However, managing multiple relay connections adds complexity to client applications.
     </p>
+    
+    <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+      <h3 class="font-semibold text-green-800 mb-3 flex items-center gap-2">
+        <Shield class="h-5 w-5" />
+        <span class="font-brand">Shugur</span> Distributed Relay Cluster
+      </h3>
+      <p class="text-green-700 text-sm mb-3">
+        Shugur solves the multi-relay complexity problem with a distributed cluster architecture. Connect to a single endpoint and get automatic high availability:
+      </p>
+      <ul class="text-green-700 text-sm space-y-1">
+        <li>• <strong>Single Connection:</strong> Connect to one endpoint, access the entire cluster</li>
+        <li>• <strong>Automatic Failover:</strong> If one relay fails, others seamlessly take over</li>
+        <li>• <strong>Data Redundancy:</strong> Events replicated across multiple nodes in real-time</li>
+        <li>• <strong>Simplified Development:</strong> No complex multi-relay management in your app</li>
+      </ul>
+    </div>
     
     <div class="grid md:grid-cols-2 gap-8 mb-8">
       <div>

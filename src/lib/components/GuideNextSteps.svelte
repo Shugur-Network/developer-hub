@@ -22,7 +22,7 @@
       {#each nextSteps as step}
         <a href={step.href} class="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-colors">
           <div class="flex justify-center mb-3">
-            <svelte:component this={getIcon(step.icon)} class="h-8 w-8 text-primary" />
+            <svelte:component this={getIcon(step.icon)} class="h-8 w-8 text-white" />
           </div>
           <h3 class="font-semibold mb-2">{step.title}</h3>
           <p class="text-sm opacity-90">{step.description}</p>

@@ -69,8 +69,8 @@
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <a href="/guides/architecture" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-blue-100 rounded-lg mb-4 w-fit">
-          <Globe class="h-6 w-6 text-blue-600" />
+        <div class="p-3 bg-blue-50 rounded-lg mb-4 w-fit">
+          <Globe class="h-6 w-6 text-blue-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">System Architecture</h3>
         <p class="text-sm text-gray-600 mb-4">Design scalable and resilient Nostr applications with proper patterns</p>
@@ -80,8 +80,8 @@
       </a>
       
       <a href="/guides/relay-connection" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-green-100 rounded-lg mb-4 w-fit">
-          <Network class="h-6 w-6 text-green-600" />
+        <div class="p-3 bg-green-50 rounded-lg mb-4 w-fit">
+          <Network class="h-6 w-6 text-green-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Relay Connection</h3>
         <p class="text-sm text-gray-600 mb-4">Advanced relay strategies, failover, and multi-relay management</p>
@@ -91,8 +91,8 @@
       </a>
       
       <a href="/guides/relay-setup" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-purple-100 rounded-lg mb-4 w-fit">
-          <Database class="h-6 w-6 text-purple-600" />
+        <div class="p-3 bg-purple-50 rounded-lg mb-4 w-fit">
+          <Database class="h-6 w-6 text-purple-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Relay Setup</h3>
         <p class="text-sm text-gray-600 mb-4">Deploy and configure your own Nostr relay infrastructure</p>
@@ -116,8 +116,8 @@
     
     <div class="grid md:grid-cols-2 gap-6">
       <a href="/guides/performance" class="group p-6 bg-white border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-green-100 rounded-lg mb-4 w-fit">
-          <Zap class="h-6 w-6 text-green-600" />
+        <div class="p-3 bg-yellow-50 rounded-lg mb-4 w-fit">
+          <Zap class="h-6 w-6 text-yellow-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Performance Optimization</h3>
         <p class="text-sm text-gray-600 mb-4">Techniques to reduce latency and increase throughput</p>
@@ -127,8 +127,8 @@
       </a>
       
       <a href="/guides/best-practices" class="group p-6 bg-white border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-orange-100 rounded-lg mb-4 w-fit">
-          <Shield class="h-6 w-6 text-orange-600" />
+        <div class="p-3 bg-orange-50 rounded-lg mb-4 w-fit">
+          <Shield class="h-6 w-6 text-orange-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Best Practices</h3>
         <p class="text-sm text-gray-600 mb-4">Security, privacy, and operational excellence</p>
@@ -152,8 +152,8 @@
     
     <div class="grid md:grid-cols-2 gap-6">
       <a href="/guides/testing" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-purple-100 rounded-lg mb-4 w-fit">
-          <CheckCircle class="h-6 w-6 text-purple-600" />
+        <div class="p-3 bg-emerald-50 rounded-lg mb-4 w-fit">
+          <CheckCircle class="h-6 w-6 text-emerald-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Testing Strategies</h3>
         <p class="text-sm text-gray-600 mb-4">Unit, integration, property-based, and load testing</p>
@@ -163,8 +163,8 @@
       </a>
       
       <a href="/guides/nip-implementation" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-blue-100 rounded-lg mb-4 w-fit">
-          <Code class="h-6 w-6 text-blue-600" />
+        <div class="p-3 bg-slate-50 rounded-lg mb-4 w-fit">
+          <Code class="h-6 w-6 text-slate-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">NIP Implementation</h3>
         <p class="text-sm text-gray-600 mb-4">Implementing and testing Nostr Improvement Proposals</p>
@@ -188,8 +188,8 @@
     
     <div class="grid md:grid-cols-2 gap-6">
       <a href="/guides/analytics" class="group p-6 bg-white border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-teal-100 rounded-lg mb-4 w-fit">
-          <Activity class="h-6 w-6 text-teal-600" />
+        <div class="p-3 bg-teal-50 rounded-lg mb-4 w-fit">
+          <Activity class="h-6 w-6 text-teal-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Analytics</h3>
         <p class="text-sm text-gray-600 mb-4">Privacy-first telemetry and product analytics</p>
@@ -199,8 +199,8 @@
       </a>
       
       <a href="/guides/machine-learning" class="group p-6 bg-white border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-pink-100 rounded-lg mb-4 w-fit">
-          <Cpu class="h-6 w-6 text-pink-600" />
+        <div class="p-3 bg-rose-50 rounded-lg mb-4 w-fit">
+          <Cpu class="h-6 w-6 text-rose-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Machine Learning</h3>
         <p class="text-sm text-gray-600 mb-4">Ranking, moderation, embeddings, and summarization</p>
@@ -224,8 +224,8 @@
     
     <div class="grid md:grid-cols-2 gap-6">
       <a href="/guides/app-store" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-emerald-100 rounded-lg mb-4 w-fit">
-          <Smartphone class="h-6 w-6 text-emerald-600" />
+        <div class="p-3 bg-cyan-50 rounded-lg mb-4 w-fit">
+          <Smartphone class="h-6 w-6 text-cyan-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">App Store Guidelines</h3>
         <p class="text-sm text-gray-600 mb-4">Mobile app distribution: privacy, security, UX, and compliance</p>
@@ -235,8 +235,8 @@
       </a>
       
       <a href="/guides/contributing" class="group p-6 border rounded-xl hover:border-primary hover:shadow-lg transition-all">
-        <div class="p-3 bg-indigo-100 rounded-lg mb-4 w-fit">
-          <GitBranch class="h-6 w-6 text-indigo-600" />
+        <div class="p-3 bg-indigo-50 rounded-lg mb-4 w-fit">
+          <GitBranch class="h-6 w-6 text-indigo-700" />
         </div>
         <h3 class="font-semibold mb-2 group-hover:text-primary">Contributing</h3>
         <p class="text-sm text-gray-600 mb-4">Contribute to the Nostr ecosystem and open source projects</p>
