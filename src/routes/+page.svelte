@@ -257,7 +257,7 @@
             <div class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
               wss://shu01.shugur.net
             </div>
-            <p class="text-sm text-gray-600 mt-2">Primary endpoint - view network status for all available endpoints</p>
+            <p class="text-sm text-gray-600 mt-2">Primary endpoint - view <a href="https://shugur.net" target="_blank" class="text-primary">shugur.net</a> for all available endpoints</p>
           </div>
           <div>
             <h4 class="font-semibold mb-3">Supported Features</h4>
