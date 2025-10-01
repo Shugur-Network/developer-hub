@@ -239,13 +239,13 @@
               <Server class="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 class="text-xl font-semibold"><span class="font-brand">Shugur</span> Relay Network</h3>
+              <h3 class="text-xl font-semibold">Shugur Relay Network</h3>
               <p class="text-gray-600">Enterprise-grade infrastructure with 35+ NIPs including Time Capsules, Lightning Zaps, and Cashu Wallets</p>
             </div>
           </div>
-          <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <!-- <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
             Production Ready
-          </span>
+          </span> -->
         </div>
         
         <div class="grid md:grid-cols-2 gap-6 mb-6">
