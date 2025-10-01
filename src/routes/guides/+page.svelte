@@ -98,9 +98,17 @@
             <div class="font-medium text-blue-600">Core Concepts</div>
             <div class="text-sm text-gray-600">Keys, events, relays, and security</div>
           </a>
+          <a href="/guides/time-capsules" class="block p-3 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg hover:from-pink-100 hover:to-purple-100 transition-colors border border-pink-200">
+            <div class="font-medium text-pink-600 flex items-center gap-2">
+              <Zap class="h-4 w-4" />
+              Time Capsules Guide
+              <span class="px-2 py-0.5 bg-pink-100 text-pink-700 text-xs rounded-full">NEW</span>
+            </div>
+            <div class="text-sm text-gray-600">Revolutionary timelock encryption</div>
+          </a>
           <a href="/nips" class="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <div class="font-medium text-blue-600">Protocol Specs (NIPs)</div>
-            <div class="text-sm text-gray-600">20+ NIPs supported by <span class="font-brand">Shugur</span> network</div>
+            <div class="text-sm text-gray-600">35+ NIPs supported by <span class="font-brand">Shugur</span> network</div>
           </a>
         </div>
       </div>

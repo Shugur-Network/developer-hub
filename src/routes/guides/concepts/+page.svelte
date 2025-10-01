@@ -1,5 +1,5 @@
 <script>
-  import { Copy, CheckCircle, Key, Globe, Zap, Lock, Users, Server, MessageSquare, Shield, Network, Database, XCircle, Settings } from 'lucide-svelte';
+  import { Copy, CheckCircle, Key, Globe, Zap, Lock, Users, Server, MessageSquare, Shield, Network, Database, XCircle, Settings, ExternalLink, FileText } from 'lucide-svelte';
   
   let copied = false;
   
@@ -324,7 +324,7 @@
     </div>
     
     <p class="text-gray-600 mb-8">
-      NIPs are standardized extensions to the Nostr protocol. They define new event types, features, and behaviors that clients and relays can implement.
+      NIPs are standardized extensions to the Nostr protocol. They define new event types, features, and behaviors that clients and relays can implement. Shugur relay supports 35+ NIPs including innovative features like Time Capsules, Lightning integration, and privacy-preserving payments.
     </p>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -347,6 +347,50 @@
       <div class="border rounded-lg p-6">
         <h4 class="font-semibold mb-2">NIP-09: Event Deletion</h4>
         <p class="text-sm text-gray-600">Request deletion of your own events from relays.</p>
+      </div>
+      
+      <!-- New Advanced NIPs -->
+      <div class="border-2 border-pink-200 rounded-lg p-6 bg-pink-50">
+        <h4 class="font-semibold mb-2 text-pink-800">🎯 NIP: Time Capsules</h4>
+        <p class="text-sm text-gray-700 mb-3">Revolutionary timelock encryption - messages decrypt automatically at future times using drand network.</p>
+        <div class="flex gap-2">
+          <a 
+            href="http://capsules.shugur.com" 
+            target="_blank"
+            class="flex items-center gap-1 px-2 py-1 bg-pink-600 text-white rounded text-xs hover:bg-pink-700 transition-colors"
+          >
+            <ExternalLink class="h-3 w-3" />
+            Demo
+          </a>
+          <a 
+            href="https://github.com/Shugur-Network/NIP-XX_Time-Capsules" 
+            target="_blank"
+            class="flex items-center gap-1 px-2 py-1 border border-pink-300 text-pink-700 rounded text-xs hover:bg-pink-50 transition-colors"
+          >
+            <FileText class="h-3 w-3" />
+            Spec
+          </a>
+        </div>
+      </div>
+      <div class="border-2 border-orange-200 rounded-lg p-6 bg-orange-50">
+        <h4 class="font-semibold mb-2 text-orange-800">⚡ NIP-57: Lightning Zaps</h4>
+        <p class="text-sm text-gray-700">Instant Bitcoin micropayments integrated directly into Nostr events for seamless monetization.</p>
+      </div>
+      <div class="border-2 border-green-200 rounded-lg p-6 bg-green-50">
+        <h4 class="font-semibold mb-2 text-green-800">🥜 NIP-60/61: Cashu Wallets</h4>
+        <p class="text-sm text-gray-700">Privacy-preserving ecash wallets and Nutzaps for anonymous payments and tipping.</p>
+      </div>
+      <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50">
+        <h4 class="font-semibold mb-2 text-blue-800">👥 NIP-72: Communities</h4>
+        <p class="text-sm text-gray-700">Structured communities with moderation, roles, and governance features.</p>
+      </div>
+      <div class="border-2 border-purple-200 rounded-lg p-6 bg-purple-50">
+        <h4 class="font-semibold mb-2 text-purple-800">📋 NIP-51: Lists</h4>
+        <p class="text-sm text-gray-700">Comprehensive list management: bookmarks, follows, mutes, communities, and custom organization.</p>
+      </div>
+      <div class="border-2 border-indigo-200 rounded-lg p-6 bg-indigo-50">
+        <h4 class="font-semibold mb-2 text-indigo-800">📅 NIP-52/53: Events</h4>
+        <p class="text-sm text-gray-700">Calendar events, live activities, and real-time collaborative features.</p>
       </div>
       <div class="border rounded-lg p-6">
         <h4 class="font-semibold mb-2">NIP-11: Relay Information</h4>
@@ -442,8 +486,8 @@
         <div class="flex justify-center mb-3">
           <MessageSquare class="h-8 w-8 text-white" />
         </div>
-        <h3 class="font-semibold mb-2">Explore NIPs</h3>
-        <p class="text-sm opacity-90">Discover all supported protocol extensions</p>
+        <h3 class="font-semibold mb-2">Explore 35+ NIPs</h3>
+        <p class="text-sm opacity-90">Time Capsules, Lightning Zaps, Cashu Wallets & more</p>
       </a>
       <a href="/guides/advanced" class="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-colors">
         <div class="flex justify-center mb-3">

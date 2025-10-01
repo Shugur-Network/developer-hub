@@ -1,6 +1,5 @@
 <script>
   import { Code, BookOpen, Zap, Globe, Server, Users, CheckCircle, ArrowRight, ExternalLink, Gamepad2, ShoppingCart, Bot, Settings } from 'lucide-svelte';
-
 </script>
 
 <svelte:head>
@@ -51,7 +50,7 @@
         class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-lg underline underline-offset-4"
       >
         <Globe class="h-5 w-5" />
-        View 20+ NIPs Supported by <span class="font-brand">Shugur</span> Network
+        View supported NIPs
         <ArrowRight class="h-4 w-4" />
       </a>
     </div>
@@ -227,14 +226,12 @@
 <!-- Shugur Relay Info -->
 <section class="py-16 bg-gray-50">
   <div class="mx-auto max-w-6xl px-4">
-    <div class="text-center mb-12">
+        <div class="text-center mb-12">
       <h2 class="text-3xl font-display mb-4">Production-Ready Relay Network</h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Connect to the <span class="font-brand">Shugur</span> distributed relay cluster for reliable, high-performance Nostr infrastructure. Unlike traditional setups requiring multiple relay connections, our HA cluster lets you connect to a single endpoint while automatically ensuring data availability and failover protection.
+        Connect to the <span class="font-brand">Shugur</span> distributed relay cluster for reliable, high-performance Nostr infrastructure. Features innovative Time Capsules, Lightning integration, and Cashu Wallet support. Unlike traditional setups requiring multiple relay connections, our HA cluster lets you connect to a single endpoint while automatically ensuring data availability and failover protection.
       </p>
-    </div>
-    
-    <div class="max-w-4xl mx-auto">
+    </div>    <div class="max-w-4xl mx-auto">
       <div class="bg-white p-8 rounded-xl border hover:shadow-lg transition-shadow">
         <div class="flex items-center justify-between mb-6">
           <div class="flex items-center gap-3">
@@ -243,7 +240,7 @@
             </div>
             <div>
               <h3 class="text-xl font-semibold"><span class="font-brand">Shugur</span> Relay Network</h3>
-              <p class="text-gray-600">Enterprise-grade infrastructure with multiple endpoints and 20+ NIPs supported</p>
+              <p class="text-gray-600">Enterprise-grade infrastructure with 35+ NIPs including Time Capsules, Lightning Zaps, and Cashu Wallets</p>
             </div>
           </div>
           <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
@@ -263,10 +260,11 @@
             <h4 class="font-semibold mb-3">Supported Features</h4>
             <ul class="text-sm text-gray-600 space-y-1">
               <li>• Single connection with distributed HA cluster</li>
-              <li>• 20+ NIPs implemented across the network</li>
-              <li>• Rate limiting protection</li>
-              <li>• Real-time monitoring and status tracking</li>
-              <li>• Free for development</li>
+              <li>• 35+ NIPs including Time Capsules (timelock encryption)</li>
+              <li>• Lightning Zaps and Cashu Wallet integration</li>
+              <li>• Advanced features: Communities, Lists, Calendar Events</li>
+              <li>• Rate limiting protection and real-time monitoring</li>
+              <li>• Free for development use</li>
             </ul>
           </div>
         </div>
@@ -297,6 +295,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- Advanced Topics Preview -->
 <section class="py-16 bg-white">
